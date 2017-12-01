@@ -1,0 +1,17 @@
+//
+//  GangUpdateNicknameViewController.h
+//  GangSDK
+//
+//  Created by codone on 2017/8/11.
+//  Copyright © 2017年 qm. All rights reserved.
+//
+
+#import "GangBasePresentViewController.h"
+
+@protocol GangUpdateRoleNameDelegate <NSObject>
+-(void)updated;
+@end
+
+@interface GangUpdateRoleNameViewController : GangBasePresentViewController
+@property(weak) id<GangUpdateRoleNameDelegate> delegate;
+@end

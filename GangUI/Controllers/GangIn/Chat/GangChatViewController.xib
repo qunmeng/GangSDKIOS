@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GangChatViewController">
+            <connections>
+                <outlet property="bg_record" destination="diX-rs-Nej" id="kxJ-WG-nrw"/>
+                <outlet property="btn_gangMessage" destination="Bqd-sF-NI8" id="xtH-Wv-PCd"/>
+                <outlet property="btn_moreAction" destination="S9J-rY-G2k" id="X71-YZ-rjs"/>
+                <outlet property="btn_msgAndVoice" destination="V0K-I8-42y" id="EB0-Gq-edI"/>
+                <outlet property="btn_record" destination="wao-sF-KjJ" id="8qR-tq-RTQ"/>
+                <outlet property="btn_send" destination="IMo-9e-8dj" id="hg3-Vh-5Yp"/>
+                <outlet property="btn_worldMessage" destination="h0F-r9-EAb" id="su2-e8-EAS"/>
+                <outlet property="constraiint_height_tipsTableView" destination="AXc-gv-VZ5" id="3LO-HR-tE7"/>
+                <outlet property="constraint_bottom_inputView" destination="fNn-Hi-VJd" id="Rg5-JR-0kG"/>
+                <outlet property="constraint_height_showActions" destination="0Gk-ZH-Zxc" id="CI8-33-QVd"/>
+                <outlet property="iv_recordVoice" destination="h0r-Jm-t9Q" id="4lK-GX-Y8S"/>
+                <outlet property="label_tvPlaceHolder" destination="QwZ-1d-hdm" id="cIE-og-yBE"/>
+                <outlet property="tableView_gang" destination="405-eq-jhm" id="tt6-7f-z0g"/>
+                <outlet property="tableView_tips" destination="2LO-Py-KbE" id="H11-K6-6as"/>
+                <outlet property="tableView_world" destination="yyO-8y-v1I" id="fCf-0f-aLd"/>
+                <outlet property="tv_input" destination="c2e-mK-5i6" id="0kf-Jp-waU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="view_gang" destination="Ie7-ae-dMH" id="cpR-XH-lgs"/>
+                <outlet property="view_input" destination="cqf-Vc-3nm" id="eJR-Uq-cDh"/>
+                <outlet property="view_moreAction" destination="Dew-Nt-Z2a" id="gYO-JL-pCG"/>
+                <outlet property="view_showActions" destination="vAs-t1-Zge" id="gDP-Gr-KCE"/>
+                <outlet property="view_showRecord" destination="jId-yg-0Mf" id="ynm-Gc-plI"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ie7-ae-dMH">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="675"/>
+                    <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2LO-Py-KbE" customClass="GangBaseTableView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="0.0"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" id="AXc-gv-VZ5"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Vkx-ys-acb"/>
+                                <outlet property="delegate" destination="-1" id="BKq-yN-5A7"/>
+                            </connections>
+                        </tableView>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="405-eq-jhm" customClass="GangChatTopLoadMoreTableView">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="675"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="ftF-c1-Xoj"/>
+                                <outlet property="delegate" destination="-1" id="bSw-2U-kxr"/>
+                            </connections>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="405-eq-jhm" secondAttribute="bottom" id="CnW-uQ-Us3"/>
+                        <constraint firstItem="405-eq-jhm" firstAttribute="top" secondItem="2LO-Py-KbE" secondAttribute="bottom" id="SBe-N9-WOW"/>
+                        <constraint firstItem="2LO-Py-KbE" firstAttribute="leading" secondItem="Ie7-ae-dMH" secondAttribute="leading" id="dfG-ky-vfE"/>
+                        <constraint firstAttribute="trailing" secondItem="2LO-Py-KbE" secondAttribute="trailing" id="dpS-7o-V4f"/>
+                        <constraint firstItem="405-eq-jhm" firstAttribute="leading" secondItem="Ie7-ae-dMH" secondAttribute="leading" id="fR1-o1-Bbk"/>
+                        <constraint firstItem="2LO-Py-KbE" firstAttribute="top" secondItem="Ie7-ae-dMH" secondAttribute="top" id="gZb-r2-PpU"/>
+                        <constraint firstAttribute="trailing" secondItem="405-eq-jhm" secondAttribute="trailing" id="lrg-vI-D8q"/>
+                    </constraints>
+                </view>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yyO-8y-v1I" customClass="GangChatTopLoadMoreTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="675"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="T26-Fu-v9M"/>
+                        <outlet property="delegate" destination="-1" id="061-je-pLm"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-sF-NI8">
+                    <rect key="frame" x="32" y="643" width="80" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="FSy-gi-Qcd"/>
+                        <constraint firstAttribute="width" constant="80" id="waj-Ie-U0F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="社群频道" backgroundImage="qm_btn_gangchat_selected">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_gangMessage_click:" destination="-1" eventType="touchUpInside" id="7WE-lY-EB8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0F-r9-EAb">
+                    <rect key="frame" x="115" y="643" width="80" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Ejj-HB-0v0"/>
+                        <constraint firstAttribute="height" constant="32" id="Yte-JH-bXe"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="招募频道" backgroundImage="qm_btn_gangchat_normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_wordMessage_click:" destination="-1" eventType="touchUpInside" id="zXu-eb-ZiZ"/>
+                    </connections>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpI-uq-MTN">
+                    <rect key="frame" x="0.0" y="675" width="414" height="43"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="h5c-rm-v2h">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="43"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V0K-I8-42y">
+                            <rect key="frame" x="18" y="0.0" width="50" height="43"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="50" id="MhR-FT-CTg"/>
+                            </constraints>
+                            <state key="normal" image="qm_btn_gangchat_voice"/>
+                            <connections>
+                                <action selector="btn_msgAndVoice_click:" destination="-1" eventType="touchUpInside" id="DC0-iU-1kB"/>
+                            </connections>
+                        </button>
+                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_btn_gangchat_press_on" translatesAutoresizingMaskIntoConstraints="NO" id="diX-rs-Nej">
+                            <rect key="frame" x="76" y="7.6666666666666288" width="277" height="28"/>
+                        </imageView>
+                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wao-sF-KjJ">
+                            <rect key="frame" x="76" y="7.6666666666666288" width="277" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="28" id="auZ-Gq-uwZ"/>
+                            </constraints>
+                            <state key="normal" title="按住发言">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cqf-Vc-3nm">
+                            <rect key="frame" x="68" y="8" width="226" height="28"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_text_input" translatesAutoresizingMaskIntoConstraints="NO" id="KD5-Uw-1Bd">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="28"/>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="c2e-mK-5i6">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="28"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想说点什么" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QwZ-1d-hdm">
+                                    <rect key="frame" x="85" y="6.6666666666666297" width="56.666666666666657" height="13.333333333333336"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="c2e-mK-5i6" secondAttribute="trailing" id="7Qk-rE-BMd"/>
+                                <constraint firstItem="KD5-Uw-1Bd" firstAttribute="top" secondItem="cqf-Vc-3nm" secondAttribute="top" id="8kA-oP-HVP"/>
+                                <constraint firstItem="QwZ-1d-hdm" firstAttribute="centerX" secondItem="cqf-Vc-3nm" secondAttribute="centerX" id="920-V9-Kbr"/>
+                                <constraint firstAttribute="bottom" secondItem="KD5-Uw-1Bd" secondAttribute="bottom" id="9PP-zt-NUG"/>
+                                <constraint firstAttribute="bottom" secondItem="c2e-mK-5i6" secondAttribute="bottom" id="ALW-8A-3b5"/>
+                                <constraint firstAttribute="height" constant="28" id="Yt4-ev-x6L"/>
+                                <constraint firstAttribute="trailing" secondItem="KD5-Uw-1Bd" secondAttribute="trailing" id="eRa-jh-FDP"/>
+                                <constraint firstItem="c2e-mK-5i6" firstAttribute="top" secondItem="cqf-Vc-3nm" secondAttribute="top" id="mmg-B2-W8f"/>
+                                <constraint firstItem="c2e-mK-5i6" firstAttribute="leading" secondItem="cqf-Vc-3nm" secondAttribute="leading" id="pPu-FZ-buN"/>
+                                <constraint firstItem="QwZ-1d-hdm" firstAttribute="centerY" secondItem="cqf-Vc-3nm" secondAttribute="centerY" id="xCu-Ba-RBh"/>
+                                <constraint firstItem="KD5-Uw-1Bd" firstAttribute="leading" secondItem="cqf-Vc-3nm" secondAttribute="leading" id="yFI-hX-uHT"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S9J-rY-G2k">
+                            <rect key="frame" x="361" y="8" width="35" height="27"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="bRw-wu-RRm"/>
+                            </constraints>
+                            <state key="normal" image="qm_btn_gangchat_more_action"/>
+                            <connections>
+                                <action selector="btn_moreAction_click:" destination="-1" eventType="touchUpInside" id="q2Z-Vc-meR"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMo-9e-8dj">
+                            <rect key="frame" x="304" y="7.6666666666666288" width="53" height="28"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="53" id="39Z-Je-aSp"/>
+                                <constraint firstAttribute="height" constant="28" id="59H-Nk-Qzx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                            <state key="normal" title="发送" backgroundImage="qm_btn_gangchat_sendmessage">
+                                <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <connections>
+                                <action selector="btn_send_click:" destination="-1" eventType="touchUpInside" id="gMd-Bm-Tv1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="h5c-rm-v2h" firstAttribute="top" secondItem="YpI-uq-MTN" secondAttribute="top" id="7dO-fC-Gyu"/>
+                        <constraint firstItem="IMo-9e-8dj" firstAttribute="centerY" secondItem="YpI-uq-MTN" secondAttribute="centerY" id="9un-hO-AIZ"/>
+                        <constraint firstItem="diX-rs-Nej" firstAttribute="centerY" secondItem="wao-sF-KjJ" secondAttribute="centerY" id="AEO-8j-pfJ"/>
+                        <constraint firstItem="wao-sF-KjJ" firstAttribute="leading" secondItem="V0K-I8-42y" secondAttribute="trailing" constant="8" id="C6j-WU-ARV"/>
+                        <constraint firstAttribute="height" constant="43" id="EBL-DR-D3z"/>
+                        <constraint firstItem="IMo-9e-8dj" firstAttribute="leading" secondItem="cqf-Vc-3nm" secondAttribute="trailing" constant="10" id="KI0-Qv-sDO"/>
+                        <constraint firstItem="V0K-I8-42y" firstAttribute="leading" secondItem="YpI-uq-MTN" secondAttribute="leading" constant="18" id="Ns9-dG-Kbc"/>
+                        <constraint firstItem="S9J-rY-G2k" firstAttribute="leading" secondItem="IMo-9e-8dj" secondAttribute="trailing" constant="4" id="PBH-me-Tle"/>
+                        <constraint firstItem="cqf-Vc-3nm" firstAttribute="centerY" secondItem="YpI-uq-MTN" secondAttribute="centerY" id="PbY-gj-2mE"/>
+                        <constraint firstItem="V0K-I8-42y" firstAttribute="top" secondItem="YpI-uq-MTN" secondAttribute="top" id="UVc-DZ-MKC"/>
+                        <constraint firstItem="diX-rs-Nej" firstAttribute="centerX" secondItem="wao-sF-KjJ" secondAttribute="centerX" id="Vey-zy-67x"/>
+                        <constraint firstAttribute="bottom" secondItem="S9J-rY-G2k" secondAttribute="bottom" constant="8" id="YmB-gO-oSw"/>
+                        <constraint firstItem="cqf-Vc-3nm" firstAttribute="leading" secondItem="V0K-I8-42y" secondAttribute="trailing" id="bjA-ka-w8m"/>
+                        <constraint firstItem="S9J-rY-G2k" firstAttribute="leading" secondItem="wao-sF-KjJ" secondAttribute="trailing" constant="8" id="bty-KS-Iuy"/>
+                        <constraint firstAttribute="trailing" secondItem="h5c-rm-v2h" secondAttribute="trailing" id="eH8-xa-WBc"/>
+                        <constraint firstItem="diX-rs-Nej" firstAttribute="height" secondItem="wao-sF-KjJ" secondAttribute="height" id="ef0-y0-Yc5"/>
+                        <constraint firstAttribute="trailing" secondItem="S9J-rY-G2k" secondAttribute="trailing" constant="18" id="gch-4u-lxx"/>
+                        <constraint firstAttribute="bottom" secondItem="V0K-I8-42y" secondAttribute="bottom" id="hTZ-Ag-aJv"/>
+                        <constraint firstAttribute="bottom" secondItem="h5c-rm-v2h" secondAttribute="bottom" id="qh7-ZA-okQ"/>
+                        <constraint firstItem="diX-rs-Nej" firstAttribute="width" secondItem="wao-sF-KjJ" secondAttribute="width" id="r1h-Sv-afx"/>
+                        <constraint firstItem="S9J-rY-G2k" firstAttribute="top" secondItem="YpI-uq-MTN" secondAttribute="top" constant="8" id="vO3-TW-gpP"/>
+                        <constraint firstItem="h5c-rm-v2h" firstAttribute="leading" secondItem="YpI-uq-MTN" secondAttribute="leading" id="vda-eI-li2"/>
+                        <constraint firstItem="wao-sF-KjJ" firstAttribute="centerY" secondItem="YpI-uq-MTN" secondAttribute="centerY" id="x8O-MG-SWH"/>
+                    </constraints>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dew-Nt-Z2a">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTy-g7-esg">
+                            <rect key="frame" x="359" y="589" width="39" height="91"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_pop_more_action" translatesAutoresizingMaskIntoConstraints="NO" id="8sZ-KX-Xdk">
+                                    <rect key="frame" x="0.0" y="0.0" width="39" height="91"/>
+                                </imageView>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vAs-t1-Zge">
+                                    <rect key="frame" x="3.6666666666666856" y="5" width="32" height="71"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="71" id="0Gk-ZH-Zxc"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="vAs-t1-Zge" firstAttribute="top" secondItem="dTy-g7-esg" secondAttribute="top" constant="5" id="5Uv-Yw-Hwa"/>
+                                <constraint firstAttribute="trailing" secondItem="vAs-t1-Zge" secondAttribute="trailing" constant="3.5" id="FYX-mW-PnK"/>
+                                <constraint firstItem="vAs-t1-Zge" firstAttribute="leading" secondItem="dTy-g7-esg" secondAttribute="leading" constant="3.5" id="HGt-kG-zMP"/>
+                                <constraint firstItem="8sZ-KX-Xdk" firstAttribute="leading" secondItem="dTy-g7-esg" secondAttribute="leading" id="JMp-tK-h6w"/>
+                                <constraint firstAttribute="trailing" secondItem="8sZ-KX-Xdk" secondAttribute="trailing" id="Lne-xg-rAh"/>
+                                <constraint firstAttribute="width" constant="39" id="YlE-ZL-6jN"/>
+                                <constraint firstAttribute="bottom" secondItem="vAs-t1-Zge" secondAttribute="bottom" constant="15" id="hbi-sS-SWT"/>
+                                <constraint firstAttribute="bottom" secondItem="8sZ-KX-Xdk" secondAttribute="bottom" id="qsD-OC-3Lu"/>
+                                <constraint firstItem="8sZ-KX-Xdk" firstAttribute="top" secondItem="dTy-g7-esg" secondAttribute="top" id="xyI-nT-hhz"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <gestureRecognizers/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="dTy-g7-esg" secondAttribute="trailing" constant="16" id="7Tj-7g-hwZ"/>
+                        <constraint firstAttribute="bottom" secondItem="dTy-g7-esg" secondAttribute="bottom" constant="56" id="RH4-AN-Mxm"/>
+                    </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="8oD-xX-iC6" appends="YES" id="gyM-tn-fE0"/>
+                    </connections>
+                </view>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jId-yg-0Mf">
+                    <rect key="frame" x="115.66666666666669" y="276.66666666666669" width="183" height="183"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_record_frame" translatesAutoresizingMaskIntoConstraints="NO" id="HnK-ck-kfx">
+                            <rect key="frame" x="0.0" y="0.0" width="183" height="183"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_record_mic" translatesAutoresizingMaskIntoConstraints="NO" id="SQL-lM-77u">
+                            <rect key="frame" x="0.0" y="0.0" width="91.333333333333329" height="183"/>
+                        </imageView>
+                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_record_tone8" translatesAutoresizingMaskIntoConstraints="NO" id="h0r-Jm-t9Q">
+                            <rect key="frame" x="91.333333333333314" y="0.0" width="91.666666666666686" height="183"/>
+                        </imageView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="h0r-Jm-t9Q" secondAttribute="bottom" id="2RO-RU-BIF"/>
+                        <constraint firstItem="HnK-ck-kfx" firstAttribute="leading" secondItem="jId-yg-0Mf" secondAttribute="leading" id="5ho-rV-e6r"/>
+                        <constraint firstAttribute="bottom" secondItem="HnK-ck-kfx" secondAttribute="bottom" id="A4f-sx-y7x"/>
+                        <constraint firstItem="h0r-Jm-t9Q" firstAttribute="width" secondItem="SQL-lM-77u" secondAttribute="width" id="Awx-Q2-tDh"/>
+                        <constraint firstItem="SQL-lM-77u" firstAttribute="leading" secondItem="jId-yg-0Mf" secondAttribute="leading" id="GPN-pv-7n1"/>
+                        <constraint firstItem="HnK-ck-kfx" firstAttribute="top" secondItem="jId-yg-0Mf" secondAttribute="top" id="HAf-mg-iKB"/>
+                        <constraint firstItem="SQL-lM-77u" firstAttribute="top" secondItem="jId-yg-0Mf" secondAttribute="top" id="Uq3-aU-RQJ"/>
+                        <constraint firstAttribute="trailing" secondItem="HnK-ck-kfx" secondAttribute="trailing" id="Vor-4D-utM"/>
+                        <constraint firstAttribute="width" constant="183" id="YnQ-Yj-sU2"/>
+                        <constraint firstItem="h0r-Jm-t9Q" firstAttribute="leading" secondItem="SQL-lM-77u" secondAttribute="trailing" id="fBN-FR-EXs"/>
+                        <constraint firstAttribute="bottom" secondItem="SQL-lM-77u" secondAttribute="bottom" id="pMl-wi-ReL"/>
+                        <constraint firstAttribute="trailing" secondItem="h0r-Jm-t9Q" secondAttribute="trailing" id="qN7-4a-hdU"/>
+                        <constraint firstAttribute="height" constant="183" id="xqm-xe-cIk"/>
+                        <constraint firstItem="h0r-Jm-t9Q" firstAttribute="top" secondItem="jId-yg-0Mf" secondAttribute="top" id="y1W-Mn-KbT"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Ie7-ae-dMH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1pe-M7-SLS"/>
+                <constraint firstItem="Dew-Nt-Z2a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1tl-63-Jxn"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7GW-1O-OpP"/>
+                <constraint firstItem="Bqd-sF-NI8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="8nn-uc-sAb"/>
+                <constraint firstItem="jId-yg-0Mf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ecn-SM-DNq"/>
+                <constraint firstItem="yyO-8y-v1I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IAm-AV-iLp"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="Bqd-sF-NI8" secondAttribute="bottom" id="KBC-Rs-7Ro"/>
+                <constraint firstAttribute="bottom" secondItem="Dew-Nt-Z2a" secondAttribute="bottom" id="MEW-qU-Z0a"/>
+                <constraint firstItem="Ie7-ae-dMH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Up8-ED-1hG"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="Ie7-ae-dMH" secondAttribute="bottom" id="Xs3-dl-cGY"/>
+                <constraint firstAttribute="trailing" secondItem="Ie7-ae-dMH" secondAttribute="trailing" id="Y3M-Wn-fAy"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="yyO-8y-v1I" secondAttribute="bottom" id="aHV-6c-LMa"/>
+                <constraint firstAttribute="trailing" secondItem="yyO-8y-v1I" secondAttribute="trailing" id="bqC-t3-Idw"/>
+                <constraint firstItem="yyO-8y-v1I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dtd-SN-rnW"/>
+                <constraint firstItem="Dew-Nt-Z2a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eGH-He-Xqr"/>
+                <constraint firstAttribute="trailing" secondItem="YpI-uq-MTN" secondAttribute="trailing" id="fJq-uU-aBl"/>
+                <constraint firstAttribute="bottom" secondItem="YpI-uq-MTN" secondAttribute="bottom" constant="18" id="fNn-Hi-VJd"/>
+                <constraint firstAttribute="trailing" secondItem="Dew-Nt-Z2a" secondAttribute="trailing" id="hzz-Kl-BSX"/>
+                <constraint firstItem="jId-yg-0Mf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iBM-95-sYh"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="h0F-r9-EAb" secondAttribute="bottom" id="wiJ-6V-uiY"/>
+                <constraint firstItem="h0F-r9-EAb" firstAttribute="leading" secondItem="Bqd-sF-NI8" secondAttribute="trailing" constant="3" id="zcj-29-Axc"/>
+            </constraints>
+            <point key="canvasLocation" x="24" y="51"/>
+        </view>
+        <tapGestureRecognizer id="8oD-xX-iC6">
+            <connections>
+                <action selector="tap_view_moreAction:" destination="-1" id="MB0-Cb-edE"/>
+            </connections>
+        </tapGestureRecognizer>
+    </objects>
+    <resources>
+        <image name="qm_bg_gangchat_bottom" width="23" height="50"/>
+        <image name="qm_bg_gangchat_text_input" width="10" height="27"/>
+        <image name="qm_bg_pop_more_action" width="39" height="71"/>
+        <image name="qm_btn_gangchat_more_action" width="27" height="27"/>
+        <image name="qm_btn_gangchat_normal" width="67" height="32"/>
+        <image name="qm_btn_gangchat_press_on" width="198" height="27"/>
+        <image name="qm_btn_gangchat_selected" width="67" height="32"/>
+        <image name="qm_btn_gangchat_sendmessage" width="52" height="27"/>
+        <image name="qm_btn_gangchat_voice" width="37" height="27"/>
+        <image name="qm_record_frame" width="188" height="183"/>
+        <image name="qm_record_mic" width="44" height="76"/>
+        <image name="qm_record_tone8" width="19" height="72"/>
+    </resources>
+</document>

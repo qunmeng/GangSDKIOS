@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="GangNormalLoadingView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SFm-Hu-RYH">
+                    <rect key="frame" x="142.5" y="227.5" width="89.5" height="65"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="15A-A5-Elc">
+                            <rect key="frame" x="10" y="10" width="69.5" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="正在加载..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JMS-y9-fGB">
+                                    <rect key="frame" x="0.0" y="28" width="69.5" height="17"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="DZ3-qq-LLe">
+                                    <rect key="frame" x="24" y="0.0" width="20" height="20"/>
+                                </activityIndicatorView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="DZ3-qq-LLe" firstAttribute="centerX" secondItem="15A-A5-Elc" secondAttribute="centerX" id="36h-l8-gQs"/>
+                                <constraint firstAttribute="trailing" secondItem="JMS-y9-fGB" secondAttribute="trailing" id="IET-fq-tJs"/>
+                                <constraint firstItem="JMS-y9-fGB" firstAttribute="top" secondItem="DZ3-qq-LLe" secondAttribute="bottom" constant="8" id="UoG-pH-eFU"/>
+                                <constraint firstAttribute="bottom" secondItem="JMS-y9-fGB" secondAttribute="bottom" id="cg9-FS-WKU"/>
+                                <constraint firstItem="JMS-y9-fGB" firstAttribute="leading" secondItem="15A-A5-Elc" secondAttribute="leading" id="pOv-od-6rF"/>
+                                <constraint firstItem="DZ3-qq-LLe" firstAttribute="top" secondItem="15A-A5-Elc" secondAttribute="top" id="vyr-cR-FO0"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="15A-A5-Elc" firstAttribute="top" secondItem="SFm-Hu-RYH" secondAttribute="top" constant="10" id="IQL-2i-vlQ"/>
+                        <constraint firstItem="15A-A5-Elc" firstAttribute="leading" secondItem="SFm-Hu-RYH" secondAttribute="leading" constant="10" id="NhF-9G-DLw"/>
+                        <constraint firstAttribute="trailing" secondItem="15A-A5-Elc" secondAttribute="trailing" constant="10" id="fvS-01-jlW"/>
+                        <constraint firstAttribute="bottom" secondItem="15A-A5-Elc" secondAttribute="bottom" constant="10" id="hKQ-KS-a1r"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="8"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="SFm-Hu-RYH" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="DwG-Mi-PgD"/>
+                <constraint firstItem="SFm-Hu-RYH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="SQP-ES-XCv"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="indicator" destination="DZ3-qq-LLe" id="ecL-ZK-1H0"/>
+                <outlet property="label_info" destination="JMS-y9-fGB" id="3is-86-YsD"/>
+                <outlet property="view_show" destination="SFm-Hu-RYH" id="R7o-QY-Ynv"/>
+            </connections>
+            <point key="canvasLocation" x="25.5" y="-21"/>
+        </view>
+    </objects>
+</document>

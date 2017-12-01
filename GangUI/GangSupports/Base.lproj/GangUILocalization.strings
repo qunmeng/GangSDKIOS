@@ -1,0 +1,84 @@
+/* 
+  GangUILocalization.strings
+  Demo
+
+  Created by codone on 2017/8/10.
+  Copyright © 2017年 qm. All rights reserved.
+ */
+
+//refresh
+"点击或下拉刷新" = "点击或下拉刷新";
+"下拉刷新" = "pull down to refresh";
+"松开刷新" = "release to refresh";
+"正在刷新" = "refreshing";
+"全部加载完成" = "no more data";
+"点击或上拉加载" = "click or pull up to load";
+"上拉加载" = "pull up to load";
+"松开加载" = "release to load";
+"正在加载" = "loading";
+"点击或下拉刷新" = "click or pull up to refresh";
+"上拉刷新" = "pull up to refresh";
+"点击或下拉加载" = "click or pull down to load";
+"下拉加载" = "pull down to load";
+//loading
+
+//not join Gang yet
+"公告" = "Notice";
+"排行" = "Rank";
+"招募频道" = "Recruit";
+"推荐" = "Recommend";
+"已申请" = "Apply";
+"邀请加入" = "Invite";
+
+//have joined Gang
+"聊天" = "Chat";
+"信息" = "Message";
+"成员" = "Members";
+"管理" = "Manage";
+"任务" = "Works";
+//---chat
+"发送" = "send";
+"想说点什么" = "to say something";
+"捐献" = "donate";
+"频道" = "channel";
+"招募频道" = "recruit channel";
+//---message
+"公告" = "Tips";
+"信息" = "Infos";
+"宣言" = "DreamWords";
+"日志" = "DayLogs";
+//---members
+"禁言室" = "mutes";
+"活跃榜" = "actives";
+"贡献榜" = "contributes";
+"添加成员" = "add";
+"输入要查找的玩家名称" = "input a username";
+"搜索" = "search";
+"退出" = "off";
+"我" = "me";
+"被禁言" = "muted";
+"周贡献" = "week-contri";
+"在线" = "online";
+//---manage
+"申请列表" = "applys";
+"职位管理" = "position Set";
+"名称" = "name";
+"等级" = "level";
+"改名" = "rename";
+"升级" = "level up";
+"编辑" = "edit";
+"入会审批" = "need apply";
+"开" = "on";
+"关" = "off";
+"解散" = "disove";
+//---works
+"日常" = "day";
+"周常" = "week";
+"签到" = "sign";
+"领取" = "get";
+"进行中" = "doing";
+"已达成" = "finished";
+//---lists
+"等级榜" = "levels";
+"人数榜" = "members";
+"财富榜" = "richs";

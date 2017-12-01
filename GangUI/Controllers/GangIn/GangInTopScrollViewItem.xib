@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="rhq-Jf-Isr" customClass="GangInTopScrollViewItem">
+            <rect key="frame" x="0.0" y="0.0" width="71" height="32"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4W-QA-bnZ">
+                    <rect key="frame" x="0.0" y="0.0" width="71" height="32"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <inset key="contentEdgeInsets" minX="4" minY="0.0" maxX="4" maxY="0.0"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="btn_click:" destination="rhq-Jf-Isr" eventType="touchUpInside" id="hhM-OX-wDf"/>
+                    </connections>
+                </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_icon_redpoint" translatesAutoresizingMaskIntoConstraints="NO" id="v6M-md-fJJ">
+                    <rect key="frame" x="51" y="0.0" width="20" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="tGP-aY-o1u"/>
+                        <constraint firstAttribute="width" constant="20" id="wj0-0L-PJr"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="x4W-QA-bnZ" secondAttribute="bottom" id="1kN-TE-UxE"/>
+                <constraint firstItem="v6M-md-fJJ" firstAttribute="top" secondItem="rhq-Jf-Isr" secondAttribute="top" id="ER8-q6-Rbv"/>
+                <constraint firstItem="x4W-QA-bnZ" firstAttribute="top" secondItem="rhq-Jf-Isr" secondAttribute="top" id="HGs-Hs-S4T"/>
+                <constraint firstAttribute="trailing" secondItem="v6M-md-fJJ" secondAttribute="trailing" id="Iir-yd-ubB"/>
+                <constraint firstAttribute="trailing" secondItem="x4W-QA-bnZ" secondAttribute="trailing" id="l8J-Qc-ErD"/>
+                <constraint firstItem="x4W-QA-bnZ" firstAttribute="leading" secondItem="rhq-Jf-Isr" secondAttribute="leading" id="n1b-CR-BNi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="btn" destination="x4W-QA-bnZ" id="bsN-u5-96G"/>
+                <outlet property="iv_point" destination="v6M-md-fJJ" id="BeC-2X-di1"/>
+            </connections>
+            <point key="canvasLocation" x="-130.5" y="245"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qm_icon_redpoint" width="20" height="20"/>
+    </resources>
+</document>

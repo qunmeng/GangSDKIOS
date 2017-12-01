@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="McX-hv-Fv6" customClass="GangTasksTableViewHeader">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="38"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangtask_title" translatesAutoresizingMaskIntoConstraints="NO" id="puq-sT-f25">
+                    <rect key="frame" x="0.0" y="3" width="375" height="35"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E80-h6-8ZX">
+                    <rect key="frame" x="27.000000000000004" y="9.6666666666666661" width="42.333333333333343" height="19.333333333333336"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="puq-sT-f25" firstAttribute="leading" secondItem="McX-hv-Fv6" secondAttribute="leading" id="Fzf-Uz-PqA"/>
+                <constraint firstItem="puq-sT-f25" firstAttribute="top" secondItem="McX-hv-Fv6" secondAttribute="top" constant="3" id="LPs-F7-Mdz"/>
+                <constraint firstAttribute="bottom" secondItem="puq-sT-f25" secondAttribute="bottom" id="dz5-sp-TsM"/>
+                <constraint firstItem="E80-h6-8ZX" firstAttribute="leading" secondItem="McX-hv-Fv6" secondAttribute="leading" constant="27" id="egx-bc-v8w"/>
+                <constraint firstAttribute="trailing" secondItem="puq-sT-f25" secondAttribute="trailing" id="kGp-7J-Oka"/>
+                <constraint firstItem="E80-h6-8ZX" firstAttribute="centerY" secondItem="McX-hv-Fv6" secondAttribute="centerY" id="pba-Qo-UdR"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="label_title" destination="E80-h6-8ZX" id="JoR-K5-Pp0"/>
+            </connections>
+            <point key="canvasLocation" x="-20.5" y="-170"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qm_bg_gangtask_title" width="16" height="16"/>
+    </resources>
+</document>

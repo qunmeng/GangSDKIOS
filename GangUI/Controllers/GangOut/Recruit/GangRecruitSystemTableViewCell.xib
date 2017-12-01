@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="recruitSystemCell" id="KGk-i7-Jjw" customClass="GangRecruitSystemTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QwJ-gM-0K8">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="50.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_recruit_chat_system_messages" translatesAutoresizingMaskIntoConstraints="NO" id="dG1-eG-Buk">
+                                <rect key="frame" x="11" y="7" width="298" height="37"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y4T-92-Xwb">
+                                <rect key="frame" x="142.5" y="17" width="35.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="y4T-92-Xwb" firstAttribute="centerX" secondItem="QwJ-gM-0K8" secondAttribute="centerX" id="0AO-10-Xig"/>
+                            <constraint firstItem="y4T-92-Xwb" firstAttribute="top" relation="greaterThanOrEqual" secondItem="QwJ-gM-0K8" secondAttribute="top" constant="7" id="5Kf-vd-Wwt"/>
+                            <constraint firstItem="dG1-eG-Buk" firstAttribute="leading" secondItem="QwJ-gM-0K8" secondAttribute="leading" constant="11" id="5Z8-9w-iNO"/>
+                            <constraint firstItem="y4T-92-Xwb" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="QwJ-gM-0K8" secondAttribute="leading" constant="11" id="CZv-5r-qxX"/>
+                            <constraint firstAttribute="bottom" secondItem="dG1-eG-Buk" secondAttribute="bottom" constant="7" id="EBr-In-Kta"/>
+                            <constraint firstAttribute="trailing" secondItem="dG1-eG-Buk" secondAttribute="trailing" constant="11" id="Ldi-kj-7VE"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="y4T-92-Xwb" secondAttribute="trailing" constant="11" id="Nef-1Y-yrg"/>
+                            <constraint firstItem="dG1-eG-Buk" firstAttribute="top" secondItem="QwJ-gM-0K8" secondAttribute="top" constant="7" id="R0o-6k-6lB"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="y4T-92-Xwb" secondAttribute="bottom" constant="7" id="fit-9p-RM8"/>
+                            <constraint firstItem="y4T-92-Xwb" firstAttribute="centerY" secondItem="QwJ-gM-0K8" secondAttribute="centerY" id="kOn-Gm-poc"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="QwJ-gM-0K8" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="9ny-2d-E4Z"/>
+                    <constraint firstAttribute="trailing" secondItem="QwJ-gM-0K8" secondAttribute="trailing" id="G2c-F1-8vE"/>
+                    <constraint firstAttribute="bottom" secondItem="QwJ-gM-0K8" secondAttribute="bottom" id="Khx-qz-LFv"/>
+                    <constraint firstItem="QwJ-gM-0K8" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Trn-Vf-Oam"/>
+                    <constraint firstItem="QwJ-gM-0K8" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="t3V-7Z-vW1"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="label_systemMessage" destination="y4T-92-Xwb" id="81C-oi-iXG"/>
+            </connections>
+            <point key="canvasLocation" x="26" y="52.5"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="qm_bg_recruit_chat_system_messages" width="9" height="40"/>
+    </resources>
+</document>

@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GangMonsterAttackViewController">
+            <connections>
+                <outlet property="btn_action" destination="Fij-5o-NuR" id="SN2-wy-u22"/>
+                <outlet property="constraint_width_percent" destination="x8S-FZ-COR" id="kXh-bx-Koh"/>
+                <outlet property="iv_blood" destination="j5U-dh-v12" id="kNl-Tc-cbO"/>
+                <outlet property="iv_empty" destination="aDk-Ia-2Xi" id="gYA-4j-68n"/>
+                <outlet property="iv_image" destination="wwM-Qr-wvL" id="CRy-NU-NxJ"/>
+                <outlet property="label_title" destination="MkR-Lb-ZgT" id="A3U-eR-QRU"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gHC-Vl-RpV">
+                    <rect key="frame" x="76" y="197.5" width="223" height="272"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_attackmonster_big" translatesAutoresizingMaskIntoConstraints="NO" id="L9x-MC-fnm">
+                            <rect key="frame" x="0.0" y="0.0" width="223" height="272"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ibf-lx-B2j">
+                            <rect key="frame" x="0.0" y="0.0" width="223" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="怪兽突袭" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkR-Lb-ZgT">
+                                    <rect key="frame" x="72" y="10.5" width="77.5" height="23"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="MkR-Lb-ZgT" firstAttribute="centerY" secondItem="Ibf-lx-B2j" secondAttribute="centerY" id="kmV-u9-ZeP"/>
+                                <constraint firstItem="MkR-Lb-ZgT" firstAttribute="centerX" secondItem="Ibf-lx-B2j" secondAttribute="centerX" id="mvC-Sk-feT"/>
+                                <constraint firstAttribute="height" constant="45" id="tXr-Dh-2gF"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nZd-8g-dQh">
+                            <rect key="frame" x="0.0" y="45" width="223" height="227"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_attackmonster" translatesAutoresizingMaskIntoConstraints="NO" id="PpH-ez-RqI">
+                                    <rect key="frame" x="0.0" y="-0.5" width="223" height="227"/>
+                                </imageView>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="y9v-NY-igf">
+                                    <rect key="frame" x="38.5" y="11" width="145" height="11"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="j5U-dh-v12">
+                                            <rect key="frame" x="-1" y="-1" width="147" height="13"/>
+                                            <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </imageView>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aDk-Ia-2Xi">
+                                            <rect key="frame" x="145" y="0.0" width="0.0" height="11"/>
+                                            <color key="backgroundColor" red="1" green="0.78419333989999995" blue="0.6487028185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" id="x8S-FZ-COR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstItem="j5U-dh-v12" firstAttribute="top" secondItem="y9v-NY-igf" secondAttribute="top" constant="-1" id="Cwo-sG-am3"/>
+                                        <constraint firstItem="j5U-dh-v12" firstAttribute="leading" secondItem="y9v-NY-igf" secondAttribute="leading" constant="-1" id="Fup-c0-oaE"/>
+                                        <constraint firstAttribute="bottom" secondItem="j5U-dh-v12" secondAttribute="bottom" constant="-1" id="Gr8-Ew-9Zh"/>
+                                        <constraint firstAttribute="bottom" secondItem="aDk-Ia-2Xi" secondAttribute="bottom" id="IaR-ZL-ubb"/>
+                                        <constraint firstItem="aDk-Ia-2Xi" firstAttribute="top" secondItem="y9v-NY-igf" secondAttribute="top" id="gh5-TG-Tgz"/>
+                                        <constraint firstAttribute="width" constant="145" id="sZP-dM-Oah"/>
+                                        <constraint firstAttribute="trailing" secondItem="j5U-dh-v12" secondAttribute="trailing" constant="-1" id="tIq-3c-Tlp"/>
+                                        <constraint firstAttribute="height" constant="11" id="vCV-KR-O3z"/>
+                                        <constraint firstAttribute="trailing" secondItem="aDk-Ia-2Xi" secondAttribute="trailing" id="zOf-4U-t7W"/>
+                                    </constraints>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                            <integer key="value" value="6"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="PpH-ez-RqI" secondAttribute="bottom" id="5bw-br-GQa"/>
+                                <constraint firstItem="y9v-NY-igf" firstAttribute="top" secondItem="nZd-8g-dQh" secondAttribute="top" constant="11" id="CKN-tB-UVh"/>
+                                <constraint firstItem="PpH-ez-RqI" firstAttribute="leading" secondItem="nZd-8g-dQh" secondAttribute="leading" id="ERJ-Gh-VaG"/>
+                                <constraint firstAttribute="trailing" secondItem="PpH-ez-RqI" secondAttribute="trailing" id="Wo9-ln-tVh"/>
+                                <constraint firstItem="PpH-ez-RqI" firstAttribute="top" secondItem="nZd-8g-dQh" secondAttribute="top" id="q2r-xt-HgP"/>
+                                <constraint firstItem="y9v-NY-igf" firstAttribute="centerX" secondItem="nZd-8g-dQh" secondAttribute="centerX" id="qjl-IO-lEb"/>
+                            </constraints>
+                        </view>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wwM-Qr-wvL">
+                            <rect key="frame" x="0.0" y="0.0" width="223" height="224"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fij-5o-NuR">
+                            <rect key="frame" x="66" y="224" width="90" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="35" id="uYc-WO-Zgb"/>
+                                <constraint firstAttribute="width" constant="90" id="xk5-oy-JqQ"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                            <state key="normal" backgroundImage="qm_btn_gangchat_attack"/>
+                            <connections>
+                                <action selector="btn_action_click:" destination="-1" eventType="touchUpInside" id="1JS-Cn-IUq"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="L9x-MC-fnm" secondAttribute="bottom" id="Bkk-5G-Lv6"/>
+                        <constraint firstItem="Ibf-lx-B2j" firstAttribute="leading" secondItem="gHC-Vl-RpV" secondAttribute="leading" id="CZF-0G-kcx"/>
+                        <constraint firstItem="Fij-5o-NuR" firstAttribute="centerX" secondItem="gHC-Vl-RpV" secondAttribute="centerX" id="F5w-8V-jj6"/>
+                        <constraint firstAttribute="trailing" secondItem="L9x-MC-fnm" secondAttribute="trailing" id="FX5-gG-WjP"/>
+                        <constraint firstAttribute="bottom" secondItem="Fij-5o-NuR" secondAttribute="bottom" constant="13" id="Maa-UM-TkX"/>
+                        <constraint firstItem="Fij-5o-NuR" firstAttribute="top" secondItem="wwM-Qr-wvL" secondAttribute="bottom" id="Nbd-Fd-kSw"/>
+                        <constraint firstAttribute="width" constant="223" id="Nbg-su-kmz"/>
+                        <constraint firstItem="Ibf-lx-B2j" firstAttribute="top" secondItem="gHC-Vl-RpV" secondAttribute="top" id="Qhm-1r-AR3"/>
+                        <constraint firstAttribute="trailing" secondItem="Ibf-lx-B2j" secondAttribute="trailing" id="RNi-6k-yx5"/>
+                        <constraint firstAttribute="trailing" secondItem="wwM-Qr-wvL" secondAttribute="trailing" id="T2p-o6-hpz"/>
+                        <constraint firstAttribute="trailing" secondItem="nZd-8g-dQh" secondAttribute="trailing" id="TFd-Ci-hI7"/>
+                        <constraint firstAttribute="bottom" secondItem="nZd-8g-dQh" secondAttribute="bottom" id="VtN-ae-r1v"/>
+                        <constraint firstAttribute="height" constant="272" id="XLm-uw-373"/>
+                        <constraint firstItem="L9x-MC-fnm" firstAttribute="leading" secondItem="gHC-Vl-RpV" secondAttribute="leading" id="YSX-fD-NP1"/>
+                        <constraint firstItem="wwM-Qr-wvL" firstAttribute="top" secondItem="gHC-Vl-RpV" secondAttribute="top" id="cvf-aR-a0U"/>
+                        <constraint firstItem="L9x-MC-fnm" firstAttribute="top" secondItem="gHC-Vl-RpV" secondAttribute="top" id="hat-gU-xNi"/>
+                        <constraint firstItem="nZd-8g-dQh" firstAttribute="leading" secondItem="gHC-Vl-RpV" secondAttribute="leading" id="oV2-9s-a9f"/>
+                        <constraint firstItem="nZd-8g-dQh" firstAttribute="top" secondItem="Ibf-lx-B2j" secondAttribute="bottom" id="z4n-2N-sY8"/>
+                        <constraint firstItem="wwM-Qr-wvL" firstAttribute="leading" secondItem="gHC-Vl-RpV" secondAttribute="leading" id="zUh-8c-q52"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FIv-5k-iUo">
+                    <rect key="frame" x="268" y="191.5" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="37" id="54J-Eq-TPo"/>
+                        <constraint firstAttribute="height" constant="37" id="A1u-MK-lW2"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="qm_btn_gangchat_pop_close"/>
+                    <connections>
+                        <action selector="btn_close_click:" destination="-1" eventType="touchUpInside" id="mTk-r4-RDA"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="FIv-5k-iUo" firstAttribute="top" secondItem="gHC-Vl-RpV" secondAttribute="top" constant="-6" id="Ciq-Aa-skH"/>
+                <constraint firstItem="gHC-Vl-RpV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="INW-Rc-vQZ"/>
+                <constraint firstItem="gHC-Vl-RpV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="klQ-rr-cwW"/>
+                <constraint firstItem="FIv-5k-iUo" firstAttribute="trailing" secondItem="gHC-Vl-RpV" secondAttribute="trailing" constant="6" id="tp5-dq-jfa"/>
+            </constraints>
+            <point key="canvasLocation" x="66.5" y="59.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qm_bg_gangchat_attackmonster" width="223" height="227"/>
+        <image name="qm_bg_gangchat_attackmonster_big" width="223" height="272"/>
+        <image name="qm_btn_gangchat_attack" width="90" height="35"/>
+        <image name="qm_btn_gangchat_pop_close" width="37" height="37"/>
+    </resources>
+</document>

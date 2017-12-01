@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="chatAttackCell" id="KGk-i7-Jjw" customClass="GangChatAttacksTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ0-CN-57y">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_tips" translatesAutoresizingMaskIntoConstraints="NO" id="boi-pG-FWE">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xdg-Ij-AI9">
+                                <rect key="frame" x="35" y="5" width="199" height="27.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cbz-W1-e55">
+                                <rect key="frame" x="239" y="16.5" width="46" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="cq7-tp-DP7"/>
+                                    <constraint firstAttribute="width" constant="46" id="dCN-Vj-fNJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <state key="normal" backgroundImage="qm_btn_gangchat_tip_attack">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btn_action_click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Qof-R4-2uZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Xdg-Ij-AI9" firstAttribute="leading" secondItem="JJ0-CN-57y" secondAttribute="leading" constant="35" id="6Fx-2H-nFV"/>
+                            <constraint firstAttribute="bottom" secondItem="boi-pG-FWE" secondAttribute="bottom" id="9Zh-RZ-jqq"/>
+                            <constraint firstItem="Xdg-Ij-AI9" firstAttribute="top" secondItem="JJ0-CN-57y" secondAttribute="top" constant="5" id="AOe-DL-o7f"/>
+                            <constraint firstAttribute="trailing" secondItem="boi-pG-FWE" secondAttribute="trailing" id="RJ8-Nq-xR2"/>
+                            <constraint firstItem="boi-pG-FWE" firstAttribute="top" secondItem="JJ0-CN-57y" secondAttribute="top" id="Z3E-rH-SMW"/>
+                            <constraint firstAttribute="bottom" secondItem="Xdg-Ij-AI9" secondAttribute="bottom" constant="11" id="fBf-Tf-2wq"/>
+                            <constraint firstItem="Cbz-W1-e55" firstAttribute="leading" secondItem="Xdg-Ij-AI9" secondAttribute="trailing" constant="5" id="oKM-ox-Kha"/>
+                            <constraint firstAttribute="bottom" secondItem="Cbz-W1-e55" secondAttribute="bottom" constant="5" id="oSM-4B-raw"/>
+                            <constraint firstItem="boi-pG-FWE" firstAttribute="leading" secondItem="JJ0-CN-57y" secondAttribute="leading" id="v62-4M-2V8"/>
+                            <constraint firstAttribute="trailing" secondItem="Cbz-W1-e55" secondAttribute="trailing" constant="35" id="xQU-yv-aWK"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="JJ0-CN-57y" secondAttribute="trailing" id="ore-er-cpO"/>
+                    <constraint firstItem="JJ0-CN-57y" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="vZV-UR-LWL"/>
+                    <constraint firstItem="JJ0-CN-57y" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="xFi-qU-BeT"/>
+                    <constraint firstAttribute="bottom" secondItem="JJ0-CN-57y" secondAttribute="bottom" id="yZv-Sd-2kM"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btn_action" destination="Cbz-W1-e55" id="Asw-eZ-DS4"/>
+                <outlet property="label_tips" destination="Xdg-Ij-AI9" id="VRh-KL-zrU"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="qm_bg_gangchat_tips" width="23" height="38"/>
+        <image name="qm_btn_gangchat_tip_attack" width="46" height="22"/>
+    </resources>
+</document>
