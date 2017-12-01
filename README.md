@@ -10,7 +10,7 @@ GangSDK-免费社群、公会、家族系统一键集成 [立即下载](http://w
 # 扩展性强
 可剥离客户端界面，可在SDK界面添加功能，可基于sdk开发
 # 全平台覆盖
-iOS版本git：  
+iOS版本git：  
 [GangSDKIOS](https://github.com/qunmeng/GangSDKIOS)  
 Android版本git：  
 [GangSDKAndroid](https://github.com/qunmeng/GangSDKAndroid)  
