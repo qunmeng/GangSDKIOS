@@ -9,3 +9,7 @@ GangSDK-免费社群、公会、家族系统一键集成 [立即下载](http://w
 完整的可配置后台，ui界面风格随心所欲，结合自身app行为定制能力超强 [配置后台](http://www.gangsdk.com/statichtml/html/gangsdkmanage/login.html)
 # 扩展性强
 可剥离客户端界面，可在SDK界面添加功能，可基于sdk开发
+# 全平台覆盖
+ios版本：  [GangSDKIOS](https://github.com/qunmeng/GangSDKIOS)
+android版本：  [GangSDKAndroid](https://github.com/qunmeng/GangSDKAndroid)
+unity3d版本：  [GangSDKUnity](https://github.com/qunmeng/GangSDKUnity)
