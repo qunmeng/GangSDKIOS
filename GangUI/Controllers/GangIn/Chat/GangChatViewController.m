@@ -215,7 +215,7 @@
     if (self.hander_WorldScroll) {
         [self.hander_WorldScroll stop];
     }
-    self.hander_WorldScroll = [CodoneTimerHander initWithInterVal:1 objHolder:@(10) whenReapt:^(CodoneTimerHander *obj) {
+    self.hander_WorldScroll = [CodoneTimerHander initWithInterVal:1 objHolder:@(0) whenReapt:^(CodoneTimerHander *obj) {
         int t = [obj.obj intValue] + 1;
         obj.obj = @(t);
         if (t>=10) {

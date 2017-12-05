@@ -78,6 +78,10 @@
     [self.tv_input setTextColor:[UIColor colorFromHexRGB:GangColor_recruit_textFieldPlaceholder]];
     [self.tv_input setTintColor:[UIColor colorFromHexRGB:GangColor_recruit_textFieldPlaceholder]];
     
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self scrollChatsToBottom];
+    });
+    
     if (GangSDKInstance.chatManager.messages_world.count==0) {
         [self.tableView startLoad];
     }
@@ -89,7 +93,7 @@
     if (self.hander_WorldScroll) {
         [self.hander_WorldScroll stop];
     }
-    self.hander_WorldScroll = [CodoneTimerHander initWithInterVal:1 objHolder:@(10) whenReapt:^(CodoneTimerHander *obj) {
+    self.hander_WorldScroll = [CodoneTimerHander initWithInterVal:1 objHolder:@(0) whenReapt:^(CodoneTimerHander *obj) {
         int t = [obj.obj intValue] + 1;
         obj.obj = @(t);
         if (t>=10) {
@@ -179,7 +183,9 @@
 
 - (void)refreshWorldTableView{
     [self.tableView reloadData];
-    [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:GangSDKInstance.chatManager.messages_world.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    if (!self.hander_WorldScroll) {
+        [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:GangSDKInstance.chatManager.messages_world.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
+    }
 }
 
 - (void)tvTextChanged:(id)sender{
