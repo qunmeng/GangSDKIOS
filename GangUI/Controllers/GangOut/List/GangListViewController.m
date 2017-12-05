@@ -207,7 +207,7 @@
                     [self.tableView endLoadMoreDatas:YES];
                 }
             } fail:^(NSError * _Nullable error) {
-                [self.tableView endRefresh];
+                [self.tableView endLoadMoreDatas:NO];
                 if (error) {
                     [self gang_toast:error.domain];
                 }
@@ -226,7 +226,7 @@
                     [self.tableView endLoadMoreDatas:YES];
                 }
             } fail:^(NSError * _Nullable error) {
-                [self.tableView endRefresh];
+                [self.tableView endLoadMoreDatas:NO];
                 if (error) {
                     [self gang_toast:error.domain];
                 }
