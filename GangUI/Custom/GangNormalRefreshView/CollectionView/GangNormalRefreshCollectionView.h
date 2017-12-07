@@ -15,7 +15,7 @@
 @end
 
 @interface GangNormalRefreshCollectionView : CodoneCollectionView
-@property(assign) id<CollectionViewRefreshDelegate> refreshDelegate;
+@property(weak) id<CollectionViewRefreshDelegate> refreshDelegate;
 
 /**
  *开始刷新

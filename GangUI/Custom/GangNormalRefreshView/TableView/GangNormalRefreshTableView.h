@@ -15,7 +15,7 @@
 @end
 
 @interface GangNormalRefreshTableView : CodoneTableView
-@property(assign) id<TableViewRefreshDelegate> refreshDelegate;
+@property(weak) id<TableViewRefreshDelegate> refreshDelegate;
 
 /**
  *开始刷新

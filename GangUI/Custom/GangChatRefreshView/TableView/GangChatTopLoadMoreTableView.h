@@ -14,7 +14,7 @@
 @end
 
 @interface GangChatTopLoadMoreTableView : CodoneTableView
-@property(assign) id<TableViewTopLoadMoreDelegate> loadMoreDelegate;
+@property(weak) id<TableViewTopLoadMoreDelegate> loadMoreDelegate;
 
 /**
  *根据下拉刷新的数据判断是否显示footer进行上拉加载

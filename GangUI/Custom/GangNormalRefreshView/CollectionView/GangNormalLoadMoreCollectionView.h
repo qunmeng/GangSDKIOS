@@ -14,7 +14,7 @@
 @end
 
 @interface GangNormalLoadMoreCollectionView : GangNormalRefreshCollectionView
-@property(assign) id<CollectionViewLoadMoreDelegate> loadMoreDelegate;
+@property(weak) id<CollectionViewLoadMoreDelegate> loadMoreDelegate;
 /**
  *根据下拉刷新的说教决策是否显示footer进行上拉加载
  *默认隐藏

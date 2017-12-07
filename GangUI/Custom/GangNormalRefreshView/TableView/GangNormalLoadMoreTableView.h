@@ -14,7 +14,7 @@
 @end
 
 @interface GangNormalLoadMoreTableView : GangNormalRefreshTableView
-@property(assign) id<TableViewLoadMoreDelegate> loadMoreDelegate;
+@property(weak) id<TableViewLoadMoreDelegate> loadMoreDelegate;
 /**
  *根据下拉刷新的说教决策是否显示footer进行上拉加载
  *默认隐藏

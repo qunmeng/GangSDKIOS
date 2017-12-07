@@ -14,7 +14,7 @@
 @end
 
 @interface GangChatBottomRefreshTableView : CodoneTableView
-@property(assign) id<TableViewBottomRefreshDelegate> refreshDelegate;
+@property(weak) id<TableViewBottomRefreshDelegate> refreshDelegate;
 
 /**
  *开始刷新

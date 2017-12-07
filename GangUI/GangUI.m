@@ -26,15 +26,7 @@
 
 +(void)startUI:(UIViewController *)controller userId:(NSString *)gameUserid nickname:(NSString *)nickname headIconUrl:(NSString *)headIconUrl gameLevel:(NSInteger)gameLevel gameRole:(NSString *)gameRole extParams:(NSDictionary *)extDic success:(void (^)(void))success failure:(void (^)(NSError * _Nullable))failure{
     [GangSDKInstance login:gameUserid nickname:nickname headIconUrl:headIconUrl gameLevel:gameLevel gameRole:gameRole extParams:extDic success:^{
-        if (GangSDKInstance.userBean) {
-            if (GangSDKInstance.settingBean) {
-                [[GangUI instance] jumpFromController:controller];
-            }else{
-                GangLog(@"------GangSDK------>gangSDK获取设置失败");
-            }
-        }else{
-            GangLog(@"------GangSDK------>gangSDK初始化失败");
-        }
+        [self startUI:controller];
         if (success) {
             success();
         }
@@ -69,10 +61,10 @@
         if (GangSDKInstance.settingBean) {
             [[GangUI instance] jumpFromController:controller];
         }else{
-            GangLog(@"------GangSDK------>gangSDK获取设置失败");
+            [[UIApplication sharedApplication].keyWindow toastTheMsg:@"获取GangSDK设置失败"];
         }
     }else{
-        GangLog(@"------GangSDK------>gangSDK初始化失败");
+        [[UIApplication sharedApplication].keyWindow toastTheMsg:@"正在登录GangSDK"];
     }
 }
 

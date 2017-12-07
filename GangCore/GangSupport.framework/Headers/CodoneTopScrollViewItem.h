@@ -14,5 +14,5 @@
 @end
 
 @interface CodoneTopScrollViewItem : UIView
-@property(assign) id<CodoneTopScrollItemDelegate> delegate;
+@property(weak) id<CodoneTopScrollItemDelegate> delegate;
 @end

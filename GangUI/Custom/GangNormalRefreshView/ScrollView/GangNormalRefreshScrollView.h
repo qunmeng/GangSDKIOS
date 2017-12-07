@@ -14,7 +14,7 @@
 @end
 
 @interface GangNormalRefreshScrollView : UIScrollView
-@property(assign) id<ScrollViewRefreshDelegate> refreshDelegate;
+@property(weak) id<ScrollViewRefreshDelegate> refreshDelegate;
 
 /**
  *开始刷新
