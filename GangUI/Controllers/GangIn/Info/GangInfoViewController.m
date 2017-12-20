@@ -120,8 +120,13 @@
             [self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
         }
         [self.tableView startRefresh];
+        if (self.scrollView.contentOffset.y>0) {
+            [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+        }
+        [self.scrollView startRefresh];
     }else if (!self.hasRefreshed) {
         [self.tableView startRefresh];
+        [self.scrollView startRefresh];
     }
 }
 
