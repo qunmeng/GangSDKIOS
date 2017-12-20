@@ -122,7 +122,9 @@
 
 -(void)refreshTheControllerNoJudge:(BOOL)noJudge{
     if (noJudge) {
-        [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+        if (self.scrollView.contentOffset.y>0) {
+            [self.scrollView setContentOffset:CGPointMake(0, 0) animated:NO];
+        }
         [self.scrollView startRefresh];
     }else if (!self.hasRefreshed) {
         [self.scrollView startRefresh];

@@ -46,7 +46,7 @@
     [self.view_flagIvs removeAllSubViews];
     self.label_nickname.text = obj.nickname;
     float x = 0;
-    if (GangSDKInstance.userBean.data.userid==obj.userid) {
+    if ([GangSDKInstance.userBean.data.userid isEqualToString:obj.userid]) {
         self.label_status.hidden = YES;
         self.btn_exitGang.hidden = NO;
         UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(x, 0, 16, 16)];

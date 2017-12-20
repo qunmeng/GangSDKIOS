@@ -37,7 +37,9 @@
 
 -(void)refreshTheControllerNoJudge:(BOOL)noJudge{
     if (noJudge) {
-        [self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
+        if (self.tableView.contentOffset.y>0) {
+            [self.tableView setContentOffset:CGPointMake(0, 0) animated:NO];
+        }
         [self.tableView startRefresh];
     }else if (!self.hasRefreshed) {
         [self.tableView startRefresh];

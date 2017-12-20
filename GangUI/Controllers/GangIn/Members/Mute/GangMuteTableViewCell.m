@@ -36,7 +36,7 @@
     self.label_level.text = [NSString stringWithFormat:@"Lv.%ld",(long)obj.gamelevel];
     [self.iv_head setImageWithURLString:obj.iconurl];
     self.label_name.text = obj.nickname;
-    if (GangSDKInstance.userBean.data.userid==obj.userid) {
+    if ([GangSDKInstance.userBean.data.userid isEqualToString:obj.userid]) {
         UIImageView *iv = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, 16, 16)];
         iv.image = [UIImage imageNamed:@"qm_icon_gangmembers_me"];
         CGRect frame = iv.frame;
