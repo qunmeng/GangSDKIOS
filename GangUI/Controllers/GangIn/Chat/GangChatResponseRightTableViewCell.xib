@@ -153,6 +153,7 @@
                 <outlet property="label_content" destination="YmL-Eo-Gue" id="B7q-xd-0s1"/>
                 <outlet property="label_nickname" destination="k7z-Sl-qLf" id="faV-cd-GpO"/>
                 <outlet property="label_time" destination="ZHT-9S-SiB" id="0ra-jF-pf6"/>
+                <outlet property="view_all" destination="S5Q-dX-OAo" id="7hr-bz-sOz"/>
                 <outlet property="view_time" destination="m36-OX-Gid" id="qhU-d3-yP1"/>
             </connections>
             <point key="canvasLocation" x="25" y="51.5"/>

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <GangSDK/GangSDK.h>
 
 @interface GangUI : NSObject
 
@@ -102,4 +103,13 @@
  */
 +(void)showGangInfo:(UIViewController *_Nonnull)controller ofId:(NSString *_Nonnull)consortiaid;
 
+#pragma mark - 调用单例可以进行一些设置保存
+
+#define GangUIInstance [GangUI instance]
+@property(assign) BOOL needFitIphoneX;/**<需要适配iphoneX*/
+/**
+ 单例
+ @return 返回GangUI单例
+ */
++(instancetype _Nonnull)instance;
 @end

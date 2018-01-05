@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="gameCenterCell" id="KGk-i7-Jjw" customClass="GangCenterGameTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="72.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_item" translatesAutoresizingMaskIntoConstraints="NO" id="4Bm-jI-IjM">
+                        <rect key="frame" x="0.0" y="3" width="320" height="66.5"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ST3-iw-7PS">
+                        <rect key="frame" x="30" y="11" width="50" height="50"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="32L-th-JYg"/>
+                            <constraint firstAttribute="width" constant="50" id="Hx8-Qd-ts4"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jos-jB-U9b">
+                        <rect key="frame" x="95" y="12" width="42" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xyp-VV-cJZ">
+                        <rect key="frame" x="95" y="41" width="28.5" height="13.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y97-7p-mRB">
+                        <rect key="frame" x="227" y="22" width="69" height="28"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="69" id="XfX-YR-IvZ"/>
+                            <constraint firstAttribute="height" constant="28" id="rSL-HL-PLH"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                        <state key="normal" title="Button" backgroundImage="qm_btn_gamecenter_start"/>
+                        <connections>
+                            <action selector="btn_download_click:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="Q9y-7f-Qip"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                <constraints>
+                    <constraint firstItem="4Bm-jI-IjM" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="3" id="BUV-9n-heF"/>
+                    <constraint firstItem="4Bm-jI-IjM" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="CxX-wZ-4iQ"/>
+                    <constraint firstItem="xyp-VV-cJZ" firstAttribute="leading" secondItem="ST3-iw-7PS" secondAttribute="trailing" constant="15" id="DJP-AA-mxA"/>
+                    <constraint firstAttribute="trailing" secondItem="y97-7p-mRB" secondAttribute="trailing" constant="24" id="JAg-yJ-RH4"/>
+                    <constraint firstItem="jos-jB-U9b" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="MWk-D5-uWc"/>
+                    <constraint firstItem="jos-jB-U9b" firstAttribute="leading" secondItem="ST3-iw-7PS" secondAttribute="trailing" constant="15" id="Q0Z-JR-zBN"/>
+                    <constraint firstItem="ST3-iw-7PS" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="UbT-LS-K9o"/>
+                    <constraint firstAttribute="bottom" secondItem="xyp-VV-cJZ" secondAttribute="bottom" constant="18" id="ZeJ-hF-eIK"/>
+                    <constraint firstItem="y97-7p-mRB" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="eTT-Q1-aV8"/>
+                    <constraint firstItem="ST3-iw-7PS" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="juG-1j-bYY"/>
+                    <constraint firstAttribute="trailing" secondItem="4Bm-jI-IjM" secondAttribute="trailing" id="kwD-we-52D"/>
+                    <constraint firstAttribute="bottom" secondItem="4Bm-jI-IjM" secondAttribute="bottom" constant="3" id="wHf-HJ-SIZ"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="btn_download" destination="y97-7p-mRB" id="73w-qU-Fov"/>
+                <outlet property="iv_head" destination="ST3-iw-7PS" id="GeW-5m-uOD"/>
+                <outlet property="label_gameDescription" destination="xyp-VV-cJZ" id="QLd-ld-nUz"/>
+                <outlet property="label_gameName" destination="jos-jB-U9b" id="QJr-lL-7JV"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="qm_bg_item" width="375" height="69"/>
+        <image name="qm_btn_gamecenter_start" width="69" height="28"/>
+    </resources>
+</document>

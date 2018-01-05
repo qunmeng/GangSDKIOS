@@ -16,10 +16,9 @@
 #import "GangMemberInfoViewController.h"
 #import "GangOutViewController.h"
 #import "GangExitGangViewController.h"
-
+#import "GangCenterUserViewController.h"
 @interface GangMembersViewController ()<UITableViewDataSource,UITableViewDelegate,TableViewRefreshDelegate,TableViewLoadMoreDelegate,UITextFieldDelegate,GangBaseTableViewCellDelegate,GangExitGangViewControllerDelegate>{
     int type;
-    
     int pageIndex;
     NSMutableArray *datas;
 }
@@ -161,6 +160,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     GangMemberInfoViewController *vc = [[GangMemberInfoViewController alloc] init];
     vc.userid = [(GangUserBeanData*)[datas objectAtIndex:indexPath.row] userid];
+    vc.consortiaid = GangSDKInstance.userBean.data.consortiaid;
     [self pushViewController:vc];
 }
 
@@ -196,7 +196,9 @@
     switch (type) {
         case 0:{
             [GangSDKInstance.groupManager getGangMembers:1 pageSize:GangPageSize success:^(GangMembersListBean *data) {
-                self.hasRefreshed = YES;
+                if (data.data.sortedlist.count>0) {
+                    self.hasRefreshed = YES;
+                }
                 [self.tableView endRefresh];
                 self.label_online.text = [NSString stringWithFormat:@"%@%d/%d",[GangTools getLocalizationOfKey:@"在线"],data.data.onlinenum,data.data.totalnum];
                 datas = [NSMutableArray arrayWithArray:data.data.sortedlist];

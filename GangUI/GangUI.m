@@ -13,8 +13,12 @@
 #import "GangOutViewController.h"
 #import "GangInViewController.h"
 #import "GangGangInfoViewController.h"
+#import <GangSupport/CodoneTools.h>
 
-@interface GangUI ()<GangUpdateRoleNameDelegate>
+#define ISIPHONEX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+@interface GangUI ()<GangUpdateRoleNameDelegate>{
+    BOOL _needFitIphoneX;
+}
 @property(weak) UIViewController *passVc;
 @property(weak) UINavigationController *fromNavigationVc;
 @property(weak) UIViewController *topController;
@@ -25,6 +29,7 @@
 @implementation GangUI
 
 +(void)startUI:(UIViewController *)controller userId:(NSString *)gameUserid nickname:(NSString *)nickname headIconUrl:(NSString *)headIconUrl gameLevel:(NSInteger)gameLevel gameRole:(NSString *)gameRole extParams:(NSDictionary *)extDic success:(void (^)(void))success failure:(void (^)(NSError * _Nullable))failure{
+    GangSDKInstance.autoRetry = NO;
     [GangSDKInstance login:gameUserid nickname:nickname headIconUrl:headIconUrl gameLevel:gameLevel gameRole:gameRole extParams:extDic success:^{
         [self startUI:controller];
         if (success) {
@@ -63,6 +68,9 @@
         }else{
             [[UIApplication sharedApplication].keyWindow toastTheMsg:@"获取GangSDK设置失败"];
         }
+    }else if (GangSDKInstance.isLoginOnOtherPlat) {
+        [[UIApplication sharedApplication].keyWindow toastTheMsg:@"账号在其他设备登录了,准备重新登录"];
+        [GangSDKInstance reLogin:nil failure:nil];
     }else{
         [[UIApplication sharedApplication].keyWindow toastTheMsg:@"正在登录GangSDK"];
     }
@@ -77,6 +85,16 @@
 }
 
 #pragma mark - private
+
+-(void)setNeedFitIphoneX:(BOOL)needFitIphoneX{
+    if (ISIPHONEX) {
+        _needFitIphoneX = YES;
+    }
+}
+
+-(BOOL)needFitIphoneX{
+    return _needFitIphoneX;
+}
 
 - (void)jumpFromController:(UIViewController*)controller{
     self.passVc = controller;
@@ -122,7 +140,7 @@
 
 -(void)registLoginOtherPlatNotify{
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(loginOnOtherPlat) name:Gang_notify_receiveLoginOnOtherPlat object:nil];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNavigationBarHidden) name:@"changeNavigationBarHidden" object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeNavigationBarHidden) name:Gang_notify_exitGangUI object:nil];
 }
 
 //账号在其他地方登录了
@@ -146,6 +164,7 @@
             [self.pushNavigationVc dismissViewControllerAnimated:YES completion:nil];
         }
     }
+    [[NSNotificationCenter defaultCenter] postNotificationName:Gang_notify_exitGangUI object:nil];
 }
 
 //恢复传入的navigationController navigationiBarHidden状态

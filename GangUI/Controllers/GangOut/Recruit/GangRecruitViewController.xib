@@ -15,11 +15,14 @@
                 <outlet property="btn_msgAndVoice" destination="1Cq-ji-liQ" id="2uA-D4-RdL"/>
                 <outlet property="btn_record" destination="1M4-3B-ele" id="ORG-FG-i4d"/>
                 <outlet property="btn_send" destination="L9Y-eF-qas" id="sMo-dm-4jy"/>
+                <outlet property="btn_singleMessage" destination="F4w-st-gHI" id="nlq-Ia-lvE"/>
+                <outlet property="btn_worldMessage" destination="zFa-CG-DK2" id="bxJ-de-eeA"/>
                 <outlet property="constraint_bottom_inputView" destination="sml-sQ-kgK" id="mjr-yR-2bD"/>
                 <outlet property="iv_bg_inputTextField" destination="qs9-Wz-mKK" id="bej-9D-051"/>
                 <outlet property="iv_recordVoice" destination="ShL-JR-9ur" id="cqQ-F8-wF1"/>
                 <outlet property="label_tvPlaceHolder" destination="8Cj-az-q8x" id="GS6-og-Y6f"/>
-                <outlet property="tableView" destination="nqn-Wp-vem" id="Rub-O4-Q5h"/>
+                <outlet property="tableView_single" destination="vnz-9v-7ee" id="94E-MM-mcq"/>
+                <outlet property="tableView_world" destination="nqn-Wp-vem" id="VQW-J6-6ka"/>
                 <outlet property="tv_input" destination="wah-hg-Z8U" id="DKr-Az-6zx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="view_showRecord" destination="XFT-8s-Xam" id="XiO-hg-YIY"/>
@@ -30,7 +33,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-Wp-vem" customClass="GangChatTopLoadMoreTableView">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nqn-Wp-vem" customClass="GangChatTopLoadMoreTableView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <connections>
@@ -38,10 +41,47 @@
                         <outlet property="delegate" destination="-1" id="3Pb-h7-lFu"/>
                     </connections>
                 </tableView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vnz-9v-7ee" customClass="GangChatTopLoadMoreTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="jLP-xC-i21"/>
+                        <outlet property="delegate" destination="-1" id="jTB-EO-eyV"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zFa-CG-DK2">
+                    <rect key="frame" x="32" y="571" width="80" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="0dZ-jO-BPq"/>
+                        <constraint firstAttribute="width" constant="80" id="rBr-HU-Xtw"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="招募频道" backgroundImage="qm_btn_gangchat_selected">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_wordMessage_click:" destination="-1" eventType="touchUpInside" id="M1O-AT-4sB"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4w-st-gHI">
+                    <rect key="frame" x="115" y="571" width="80" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="32" id="PdM-Gw-eJc"/>
+                        <constraint firstAttribute="width" constant="80" id="XEV-3e-xqH"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <state key="normal" title="私聊频道" backgroundImage="qm_btn_gangchat_normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_singleMessage_click:" destination="-1" eventType="touchUpInside" id="15b-YO-Wwa"/>
+                    </connections>
+                </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3BR-bX-Hfw">
                     <rect key="frame" x="0.0" y="603" width="375" height="50"/>
                     <subviews>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_recruit_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="O03-Nz-zXA">
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_bottom" translatesAutoresizingMaskIntoConstraints="NO" id="O03-Nz-zXA">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         </imageView>
@@ -51,35 +91,65 @@
                                 <constraint firstAttribute="width" constant="37" id="Fj8-WW-vpW"/>
                                 <constraint firstAttribute="height" constant="27" id="Wbs-n6-SX8"/>
                             </constraints>
-                            <state key="normal" image="qm_icon_recruit_mac"/>
+                            <state key="normal" image="qm_btn_gangchat_voice"/>
                             <connections>
                                 <action selector="btn_msgAndVoice_click:" destination="-1" eventType="touchUpInside" id="JVR-h3-8t8"/>
                             </connections>
                         </button>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_recruit_text_input" translatesAutoresizingMaskIntoConstraints="NO" id="qs9-Wz-mKK">
-                            <rect key="frame" x="64" y="11.5" width="226" height="27"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </imageView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wah-hg-Z8U">
-                            <rect key="frame" x="64" y="11.5" width="226" height="27"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4CI-C8-EtS">
+                            <rect key="frame" x="64" y="10" width="226" height="30"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_text_input" translatesAutoresizingMaskIntoConstraints="NO" id="qs9-Wz-mKK">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </imageView>
+                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wah-hg-Z8U">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                </textView>
+                                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_btn_gangchat_press_on" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-2x-FA9">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </imageView>
+                                <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M4-3B-ele">
+                                    <rect key="frame" x="0.0" y="0.0" width="226" height="30"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <state key="normal" title="按住 说话" backgroundImage="qm_btn_gangchat_press_on"/>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想说点什么" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cj-az-q8x">
+                                    <rect key="frame" x="79" y="7" width="67" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="27" id="jfV-m9-x8x"/>
+                                <constraint firstItem="1jp-2x-FA9" firstAttribute="top" secondItem="4CI-C8-EtS" secondAttribute="top" id="2eK-tZ-RGo"/>
+                                <constraint firstAttribute="bottom" secondItem="1jp-2x-FA9" secondAttribute="bottom" id="2kX-dc-azY"/>
+                                <constraint firstAttribute="trailing" secondItem="wah-hg-Z8U" secondAttribute="trailing" id="4Pf-ur-EmH"/>
+                                <constraint firstItem="1jp-2x-FA9" firstAttribute="leading" secondItem="4CI-C8-EtS" secondAttribute="leading" id="8LN-tj-HlO"/>
+                                <constraint firstAttribute="bottom" secondItem="1M4-3B-ele" secondAttribute="bottom" id="CLK-Ma-Ddl"/>
+                                <constraint firstItem="qs9-Wz-mKK" firstAttribute="leading" secondItem="4CI-C8-EtS" secondAttribute="leading" id="GpZ-14-1pe"/>
+                                <constraint firstItem="8Cj-az-q8x" firstAttribute="centerY" secondItem="4CI-C8-EtS" secondAttribute="centerY" id="PcU-bq-aNk"/>
+                                <constraint firstItem="qs9-Wz-mKK" firstAttribute="top" secondItem="4CI-C8-EtS" secondAttribute="top" id="Qmq-DD-chN"/>
+                                <constraint firstItem="wah-hg-Z8U" firstAttribute="top" secondItem="4CI-C8-EtS" secondAttribute="top" id="UOx-eR-hHl"/>
+                                <constraint firstAttribute="bottom" secondItem="wah-hg-Z8U" secondAttribute="bottom" id="ZCW-UC-iFp"/>
+                                <constraint firstAttribute="trailing" secondItem="1M4-3B-ele" secondAttribute="trailing" id="as5-vi-9xv"/>
+                                <constraint firstAttribute="height" constant="30" id="ay0-03-A98"/>
+                                <constraint firstAttribute="trailing" secondItem="1jp-2x-FA9" secondAttribute="trailing" id="buS-OD-Vqg"/>
+                                <constraint firstItem="8Cj-az-q8x" firstAttribute="centerX" secondItem="4CI-C8-EtS" secondAttribute="centerX" id="dbE-eM-XBW"/>
+                                <constraint firstAttribute="bottom" secondItem="qs9-Wz-mKK" secondAttribute="bottom" id="f8z-3T-aU9"/>
+                                <constraint firstItem="1M4-3B-ele" firstAttribute="leading" secondItem="4CI-C8-EtS" secondAttribute="leading" id="nHM-qo-bTy"/>
+                                <constraint firstItem="wah-hg-Z8U" firstAttribute="leading" secondItem="4CI-C8-EtS" secondAttribute="leading" id="o7j-3w-fjY"/>
+                                <constraint firstAttribute="trailing" secondItem="qs9-Wz-mKK" secondAttribute="trailing" id="uF8-vu-fFB"/>
+                                <constraint firstItem="1M4-3B-ele" firstAttribute="top" secondItem="4CI-C8-EtS" secondAttribute="top" id="zoO-Ag-g15"/>
                             </constraints>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_btn_recruit_press_on" translatesAutoresizingMaskIntoConstraints="NO" id="1jp-2x-FA9">
-                            <rect key="frame" x="64" y="11" width="226" height="27"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        </imageView>
-                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1M4-3B-ele">
-                            <rect key="frame" x="64" y="11.5" width="226" height="27"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="按住 说话" backgroundImage="qm_btn_recruit_press_on"/>
-                        </button>
+                        </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L9Y-eF-qas">
                             <rect key="frame" x="299" y="11.5" width="52" height="27"/>
                             <constraints>
@@ -87,46 +157,26 @@
                                 <constraint firstAttribute="height" constant="27" id="tRN-N2-EwE"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <state key="normal" title="发送" backgroundImage="qm_btn_recruit_sendmessage"/>
+                            <state key="normal" title="发送" backgroundImage="qm_btn_gangchat_sendmessage"/>
                             <connections>
                                 <action selector="btn_sendClick:" destination="-1" eventType="touchUpInside" id="HBU-9T-xHW"/>
                             </connections>
                         </button>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="想说点什么" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cj-az-q8x">
-                            <rect key="frame" x="154" y="16.5" width="67" height="16"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <nil key="highlightedColor"/>
-                        </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="O03-Nz-zXA" secondAttribute="bottom" id="08M-Wh-2bW"/>
-                        <constraint firstItem="1jp-2x-FA9" firstAttribute="height" secondItem="1M4-3B-ele" secondAttribute="height" id="25F-I5-Q9x"/>
                         <constraint firstAttribute="trailing" secondItem="L9Y-eF-qas" secondAttribute="trailing" constant="24" id="4iE-dT-1Oc"/>
-                        <constraint firstItem="L9Y-eF-qas" firstAttribute="leading" secondItem="wah-hg-Z8U" secondAttribute="trailing" constant="9" id="5B7-lM-kbu"/>
-                        <constraint firstItem="1M4-3B-ele" firstAttribute="width" secondItem="wah-hg-Z8U" secondAttribute="width" id="8k8-GJ-tGY"/>
-                        <constraint firstItem="8Cj-az-q8x" firstAttribute="centerY" secondItem="3BR-bX-Hfw" secondAttribute="centerY" id="H3E-HG-4RS"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="width" secondItem="qs9-Wz-mKK" secondAttribute="width" id="JPB-Ux-aMw"/>
-                        <constraint firstItem="1M4-3B-ele" firstAttribute="height" secondItem="wah-hg-Z8U" secondAttribute="height" id="KO6-oT-MiU"/>
-                        <constraint firstItem="1M4-3B-ele" firstAttribute="centerX" secondItem="wah-hg-Z8U" secondAttribute="centerX" id="KhU-ID-b07"/>
+                        <constraint firstItem="L9Y-eF-qas" firstAttribute="leading" secondItem="4CI-C8-EtS" secondAttribute="trailing" constant="9" id="7cQ-qE-UO5"/>
+                        <constraint firstItem="4CI-C8-EtS" firstAttribute="leading" secondItem="1Cq-ji-liQ" secondAttribute="trailing" constant="9" id="9RV-Py-9n0"/>
                         <constraint firstItem="O03-Nz-zXA" firstAttribute="leading" secondItem="3BR-bX-Hfw" secondAttribute="leading" id="MVe-N2-QOA"/>
                         <constraint firstItem="1Cq-ji-liQ" firstAttribute="centerY" secondItem="3BR-bX-Hfw" secondAttribute="centerY" id="Nrb-hM-EEF"/>
                         <constraint firstItem="O03-Nz-zXA" firstAttribute="top" secondItem="3BR-bX-Hfw" secondAttribute="top" id="S6q-Fh-3Ah"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="leading" secondItem="1Cq-ji-liQ" secondAttribute="trailing" constant="9" id="TOE-I3-gI8"/>
-                        <constraint firstItem="8Cj-az-q8x" firstAttribute="centerX" secondItem="3BR-bX-Hfw" secondAttribute="centerX" id="TdK-Ne-D1C"/>
                         <constraint firstAttribute="trailing" secondItem="O03-Nz-zXA" secondAttribute="trailing" id="VP2-fz-bOJ"/>
                         <constraint firstItem="L9Y-eF-qas" firstAttribute="centerY" secondItem="3BR-bX-Hfw" secondAttribute="centerY" id="cUt-2I-21g"/>
                         <constraint firstAttribute="height" constant="50" id="ecw-4e-zPA"/>
-                        <constraint firstItem="1jp-2x-FA9" firstAttribute="width" secondItem="1M4-3B-ele" secondAttribute="width" id="egI-We-fJz"/>
-                        <constraint firstItem="1jp-2x-FA9" firstAttribute="centerX" secondItem="1M4-3B-ele" secondAttribute="centerX" id="gVD-NG-Rqc"/>
-                        <constraint firstItem="1M4-3B-ele" firstAttribute="centerY" secondItem="wah-hg-Z8U" secondAttribute="centerY" id="hWK-Pe-w4v"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="centerX" secondItem="qs9-Wz-mKK" secondAttribute="centerX" id="hnF-OE-fSf"/>
-                        <constraint firstItem="1jp-2x-FA9" firstAttribute="centerY" secondItem="1M4-3B-ele" secondAttribute="centerY" id="imB-X5-qdc"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="centerY" secondItem="3BR-bX-Hfw" secondAttribute="centerY" id="p2k-5S-oAr"/>
+                        <constraint firstItem="4CI-C8-EtS" firstAttribute="centerY" secondItem="3BR-bX-Hfw" secondAttribute="centerY" id="pev-qf-vzh"/>
                         <constraint firstItem="1Cq-ji-liQ" firstAttribute="leading" secondItem="3BR-bX-Hfw" secondAttribute="leading" constant="18" id="rnM-bU-b2A"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="height" secondItem="qs9-Wz-mKK" secondAttribute="height" id="sK3-iV-0VX"/>
-                        <constraint firstItem="wah-hg-Z8U" firstAttribute="centerY" secondItem="qs9-Wz-mKK" secondAttribute="centerY" id="vxa-Uw-fkA"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XFT-8s-Xam">
@@ -164,25 +214,35 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="vnz-9v-7ee" secondAttribute="trailing" id="4Uc-MI-8Fr"/>
+                <constraint firstItem="F4w-st-gHI" firstAttribute="leading" secondItem="zFa-CG-DK2" secondAttribute="trailing" constant="3" id="596-m6-NzA"/>
                 <constraint firstItem="nqn-Wp-vem" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6Xp-gg-pj3"/>
                 <constraint firstItem="XFT-8s-Xam" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="9YQ-qb-wWF"/>
                 <constraint firstItem="3BR-bX-Hfw" firstAttribute="top" secondItem="nqn-Wp-vem" secondAttribute="bottom" id="Aoi-0o-GCO"/>
+                <constraint firstItem="vnz-9v-7ee" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="BWQ-nO-9yy"/>
+                <constraint firstItem="3BR-bX-Hfw" firstAttribute="top" secondItem="zFa-CG-DK2" secondAttribute="bottom" id="ExK-zJ-Yzi"/>
                 <constraint firstItem="nqn-Wp-vem" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Ge9-EG-9Dz"/>
+                <constraint firstItem="vnz-9v-7ee" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Oxr-jM-7Ic"/>
                 <constraint firstAttribute="trailing" secondItem="3BR-bX-Hfw" secondAttribute="trailing" id="S7a-BT-qWR"/>
+                <constraint firstItem="3BR-bX-Hfw" firstAttribute="top" secondItem="vnz-9v-7ee" secondAttribute="bottom" id="UKq-pu-ya1"/>
+                <constraint firstItem="3BR-bX-Hfw" firstAttribute="top" secondItem="F4w-st-gHI" secondAttribute="bottom" id="VVW-qv-Wp9"/>
                 <constraint firstItem="XFT-8s-Xam" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VjN-rw-41V"/>
                 <constraint firstItem="3BR-bX-Hfw" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Znc-hx-rna"/>
                 <constraint firstAttribute="trailing" secondItem="nqn-Wp-vem" secondAttribute="trailing" id="gXm-y9-HYf"/>
+                <constraint firstItem="zFa-CG-DK2" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="lRM-ZT-qLJ"/>
                 <constraint firstAttribute="bottom" secondItem="3BR-bX-Hfw" secondAttribute="bottom" constant="14" id="sml-sQ-kgK"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="51.5"/>
         </view>
     </objects>
     <resources>
-        <image name="qm_bg_recruit_bottom" width="375" height="50"/>
-        <image name="qm_bg_recruit_text_input" width="226" height="27"/>
-        <image name="qm_btn_recruit_press_on" width="226" height="27"/>
-        <image name="qm_btn_recruit_sendmessage" width="51" height="27"/>
-        <image name="qm_icon_recruit_mac" width="37" height="27"/>
+        <image name="qm_bg_gangchat_bottom" width="23" height="50"/>
+        <image name="qm_bg_gangchat_text_input" width="10" height="27"/>
+        <image name="qm_btn_gangchat_normal" width="67" height="32"/>
+        <image name="qm_btn_gangchat_press_on" width="198" height="27"/>
+        <image name="qm_btn_gangchat_selected" width="67" height="32"/>
+        <image name="qm_btn_gangchat_sendmessage" width="52" height="27"/>
+        <image name="qm_btn_gangchat_voice" width="37" height="27"/>
         <image name="qm_record_frame" width="188" height="183"/>
         <image name="qm_record_mic" width="44" height="76"/>
         <image name="qm_record_tone8" width="19" height="72"/>

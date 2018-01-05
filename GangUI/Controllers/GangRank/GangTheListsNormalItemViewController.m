@@ -109,7 +109,9 @@
 #pragma refreshDelegate
 -(void)refreshDatas:(id)sender{
     [GangSDKInstance.groupManager getGangList:self.type atPage:1 pageSize:GangPageSize success:^(GangListBean * _Nullable data) {
-        self.hasRefreshed = YES;
+        if (data.data.count>0) {
+            self.hasRefreshed = YES;
+        }
         [self.tableView endRefresh];
         datas = [NSMutableArray arrayWithArray:data.data];
         [self.tableView reloadData];

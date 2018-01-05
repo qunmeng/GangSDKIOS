@@ -6,7 +6,6 @@
 //  Copyright © 2017年 qm. All rights reserved.
 //
 
-#import "GangBaseBean.h"
 #import "GangUserBean.h"
 
 @interface GangUserListBean : GangBaseBean

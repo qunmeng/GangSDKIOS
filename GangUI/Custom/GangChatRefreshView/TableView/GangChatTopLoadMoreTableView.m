@@ -15,12 +15,18 @@
     [super willMoveToSuperview:newSuperview];
     if (newSuperview) {
         __weak GangChatTopLoadMoreTableView *weakSelf = self;
+        self.contentInset = UIEdgeInsetsMake(0, 0, 40, 0);
         [[self setupHeader:[self customRefreshViewName] withBlock:^{
             if (weakSelf.loadMoreDelegate&&[weakSelf.loadMoreDelegate respondsToSelector:@selector(loadMoreDatas:)]) {
                 [weakSelf.loadMoreDelegate performSelector:@selector(loadMoreDatas:) withObject:weakSelf];
             }
         }] showLoadMoreData];
+        self.refreshHeader.isNotReady = YES;
     }
+}
+
+-(void)beEnable{
+    self.refreshHeader.isNotReady = NO;
 }
 
 -(void)hideTheRefreshHeader:(BOOL)hide{

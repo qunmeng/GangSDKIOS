@@ -10,6 +10,7 @@
 #import <GangSupport/CodoneLabel.h>
 
 @interface GangChatResponseLeftTableViewCell : GangBaseTableViewCell
+@property (weak, nonatomic) IBOutlet UIView *view_all;
 @property (weak, nonatomic) IBOutlet UIView *view_time;
 @property (weak, nonatomic) IBOutlet UILabel *label_time;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_time;
@@ -23,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_width;
 @property (weak, nonatomic) IBOutlet UIButton *btn_response;
 
-@property(assign) BOOL isWorld;
+@property(assign) BOOL isWorld;/**<是否是世界消息，世界消息要显示社群图标*/
+@property(assign) BOOL isSingle;/**<是否是私聊消息*/
 
 -(void)showTime:(BOOL)showOrHide;
 @end

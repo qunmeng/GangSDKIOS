@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="MQc-pZ-FPt" customClass="GangChatHeadClickView">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Fb-cJ-2mz">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <connections>
+                        <action selector="btn_click:" destination="MQc-pZ-FPt" eventType="touchUpInside" id="mog-HT-6QQ"/>
+                    </connections>
+                </button>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RcG-An-to9">
+                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="b9D-56-zu1"/>
+                        <constraint firstAttribute="width" constant="50" id="mgd-K7-F9d"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="25"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5S-yL-aot">
+                    <rect key="frame" x="51" y="0.0" width="97" height="109"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_gangchat_headclick" translatesAutoresizingMaskIntoConstraints="NO" id="Kwt-b6-OWn">
+                            <rect key="frame" x="0.0" y="0.0" width="97" height="109"/>
+                        </imageView>
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f3T-47-lUl">
+                            <rect key="frame" x="12" y="10" width="76" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="76" id="Cmc-hE-hXc"/>
+                                <constraint firstAttribute="height" constant="25" id="FdX-hg-SDW"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <state key="normal" title="私聊" backgroundImage="qm_btn_gangchat_headclick_item"/>
+                            <connections>
+                                <action selector="btn_click:" destination="MQc-pZ-FPt" eventType="touchUpInside" id="Kuy-Tg-fFx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcl-LT-DH1">
+                            <rect key="frame" x="12" y="42" width="76" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="Fyk-Hd-RTE"/>
+                                <constraint firstAttribute="width" constant="76" id="NyD-kR-EHn"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <state key="normal" title="个人信息" backgroundImage="qm_btn_gangchat_headclick_item"/>
+                            <connections>
+                                <action selector="btn_click:" destination="MQc-pZ-FPt" eventType="touchUpInside" id="F5w-or-7zf"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2P-Xn-8nK">
+                            <rect key="frame" x="12" y="74" width="76" height="25"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="25" id="afP-hC-biM"/>
+                                <constraint firstAttribute="width" constant="76" id="gEl-3b-feP"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                            <state key="normal" title="公会信息" backgroundImage="qm_btn_gangchat_headclick_item"/>
+                            <connections>
+                                <action selector="btn_click:" destination="MQc-pZ-FPt" eventType="touchUpInside" id="Gih-jO-YOx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="Kwt-b6-OWn" secondAttribute="bottom" id="3iZ-o4-5ZF"/>
+                        <constraint firstAttribute="trailing" secondItem="xcl-LT-DH1" secondAttribute="trailing" constant="9" id="BSF-xZ-BPS"/>
+                        <constraint firstAttribute="trailing" secondItem="f3T-47-lUl" secondAttribute="trailing" constant="9" id="CQh-ka-JEF"/>
+                        <constraint firstItem="j2P-Xn-8nK" firstAttribute="leading" secondItem="n5S-yL-aot" secondAttribute="leading" constant="12" id="DHG-xD-eph"/>
+                        <constraint firstItem="xcl-LT-DH1" firstAttribute="leading" secondItem="n5S-yL-aot" secondAttribute="leading" constant="12" id="Nzr-0c-sFL"/>
+                        <constraint firstAttribute="trailing" secondItem="j2P-Xn-8nK" secondAttribute="trailing" constant="9" id="RU9-IB-CoP"/>
+                        <constraint firstItem="Kwt-b6-OWn" firstAttribute="top" secondItem="n5S-yL-aot" secondAttribute="top" id="Why-r5-h8n"/>
+                        <constraint firstItem="Kwt-b6-OWn" firstAttribute="leading" secondItem="n5S-yL-aot" secondAttribute="leading" id="XCY-KD-4L2"/>
+                        <constraint firstAttribute="trailing" secondItem="Kwt-b6-OWn" secondAttribute="trailing" id="Y4r-OK-isQ"/>
+                        <constraint firstItem="j2P-Xn-8nK" firstAttribute="top" secondItem="xcl-LT-DH1" secondAttribute="bottom" constant="7" id="joh-dx-9AA"/>
+                        <constraint firstItem="xcl-LT-DH1" firstAttribute="top" secondItem="f3T-47-lUl" secondAttribute="bottom" constant="7" id="n3B-Xs-vLp"/>
+                        <constraint firstItem="f3T-47-lUl" firstAttribute="top" secondItem="n5S-yL-aot" secondAttribute="top" constant="10" id="onc-k2-cN3"/>
+                        <constraint firstItem="f3T-47-lUl" firstAttribute="leading" secondItem="n5S-yL-aot" secondAttribute="leading" constant="12" id="rYz-Ii-lR0"/>
+                        <constraint firstAttribute="bottom" secondItem="j2P-Xn-8nK" secondAttribute="bottom" constant="10" id="tt8-AR-4KF"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="5Fb-cJ-2mz" firstAttribute="top" secondItem="MQc-pZ-FPt" secondAttribute="top" id="004-Tq-Id6"/>
+                <constraint firstAttribute="trailing" secondItem="5Fb-cJ-2mz" secondAttribute="trailing" id="Elh-A7-UGI"/>
+                <constraint firstItem="n5S-yL-aot" firstAttribute="top" secondItem="RcG-An-to9" secondAttribute="top" id="KVn-Gn-Kwi"/>
+                <constraint firstItem="RcG-An-to9" firstAttribute="top" secondItem="MQc-pZ-FPt" secondAttribute="top" id="U5M-Mh-jiq"/>
+                <constraint firstItem="n5S-yL-aot" firstAttribute="leading" secondItem="RcG-An-to9" secondAttribute="trailing" constant="1" id="dI9-qc-Mlh"/>
+                <constraint firstItem="5Fb-cJ-2mz" firstAttribute="leading" secondItem="MQc-pZ-FPt" secondAttribute="leading" id="piW-8C-nQ7"/>
+                <constraint firstAttribute="bottom" secondItem="5Fb-cJ-2mz" secondAttribute="bottom" id="tBy-y4-w8r"/>
+                <constraint firstItem="RcG-An-to9" firstAttribute="leading" secondItem="MQc-pZ-FPt" secondAttribute="leading" id="xXg-XT-Ccf"/>
+            </constraints>
+            <connections>
+                <outlet property="btn_gangInfo" destination="j2P-Xn-8nK" id="fOO-If-vq9"/>
+                <outlet property="btn_showUserInfo" destination="xcl-LT-DH1" id="Kg5-XI-4Rf"/>
+                <outlet property="btn_singleChat" destination="f3T-47-lUl" id="mcu-wu-sZ3"/>
+                <outlet property="constraint_height_gangInfo" destination="afP-hC-biM" id="KOb-yL-YvI"/>
+                <outlet property="constraint_margin_top_gangInfo" destination="joh-dx-9AA" id="6Oi-1f-nbC"/>
+                <outlet property="constraint_x" destination="xXg-XT-Ccf" id="1xD-WY-qdS"/>
+                <outlet property="constraint_y" destination="U5M-Mh-jiq" id="7dA-dW-6z1"/>
+                <outlet property="iv_head" destination="RcG-An-to9" id="FPe-eJ-kta"/>
+            </connections>
+            <point key="canvasLocation" x="49.5" y="8.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qm_bg_gangchat_headclick" width="97" height="109"/>
+        <image name="qm_btn_gangchat_headclick_item" width="76" height="25"/>
+    </resources>
+</document>

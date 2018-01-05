@@ -13,17 +13,20 @@
 @property(assign) int consortia_auto_dissolved_min_usernum;      /**<新创建社群人数太少强制解散人数*/
 @property(assign) int consortia_auto_dissolved_min_days;         /**<新创建社群人数太少强制解散时长(天)*/
 @property(assign) int consortia_auto_dissolved_flag;             /**<新创建社群人数太少强制解散开关*/
-@property(assign) int is_use_emergence_function_flag;            /**<是否开机紧急事件*/
-@property(assign) int is_use_callup_function_flag;               /**<召集令开关是否开启*/
-@property(assign) int consortia_kick_chairman_flag;              /**<系统自动罢免管理员*/
-@property(assign) int consortia_modify_nickname_time_interval;   /**<社群改名cd*/
+@property(assign) BOOL is_use_emergence_function_flag;           /**<是否开启紧急事件*/
+@property(assign) BOOL is_use_callup_function_flag;              /**<召集令开关是否开启*/
+@property(assign) BOOL consortia_kick_chairman_flag;             /**<系统自动罢免管理员*/
+@property(assign) int consortia_modify_nickname_time_interval;   /**<社群改名cd时长*/
 @property(assign) int consortia_kick_chairman_min_days;          /**<系统自动罢免管理员时间*/
 @property(assign) int left_and_join_consortia_time_interval;     /**<退出后加入新社群的时间间隔*/
-@property(assign) int left_consortia_contribution_clean;         /**<退出社群贡献清零开关*/
+@property(assign) BOOL left_consortia_contribution_clean;        /**<退出社群贡献清零开关*/
 @property(strong) NSArray *speak_forbbiden_time_list;            /**<禁言时长(单位:秒)选项,NSInteger类型*/
-@property(strong) NSArray<NSString*> *consortia_icons;                      /**<创建社群图标选项*/
+@property(strong) NSArray<NSString*> *consortia_icons;           /**<创建社群图标选项*/
 @property(assign) int speak_task_num;                            /**<在线任务时长*/
 @property(assign) BOOL user_icon_is_allow_update;                /**<是否允许修改头像*/
+@property(assign) BOOL is_use_pay_module;                        /**<是否启用支付模块*/
+@property(assign) BOOL is_use_gameapp_recommend_module;          /**<是否启用应用推荐模块*/
+@property(assign) BOOL is_use_task_module;                       /**<是否启用任务模块*/
 @property(strong) NSString *client_key;                          /**<加密key*/
 @end
 

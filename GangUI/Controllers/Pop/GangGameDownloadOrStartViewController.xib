@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GangGameDownloadOrStartViewController">
+            <connections>
+                <outlet property="btn_startOrDownload" destination="M3b-h5-lx2" id="Pxh-Sd-eTH"/>
+                <outlet property="label_content" destination="NqI-mb-ocP" id="eWp-Jq-ZZK"/>
+                <outlet property="label_titleView" destination="DCs-zf-WMV" id="z6j-DB-wys"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EGa-cc-M06">
+                    <rect key="frame" x="75.5" y="213" width="223" height="240"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_pop_out_tips" translatesAutoresizingMaskIntoConstraints="NO" id="fE5-Ot-tuB">
+                            <rect key="frame" x="0.0" y="0.0" width="223" height="240"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        </imageView>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d2d-7Z-StJ">
+                            <rect key="frame" x="0.0" y="0.0" width="223" height="45"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提 示" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DCs-zf-WMV">
+                                    <rect key="frame" x="90" y="11" width="44" height="23"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="DCs-zf-WMV" firstAttribute="centerX" secondItem="d2d-7Z-StJ" secondAttribute="centerX" id="nZs-AZ-XfF"/>
+                                <constraint firstItem="DCs-zf-WMV" firstAttribute="centerY" secondItem="d2d-7Z-StJ" secondAttribute="centerY" id="wkq-wR-92k"/>
+                                <constraint firstAttribute="height" constant="45" id="yj1-rb-Hvn"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hhR-0P-yP9">
+                            <rect key="frame" x="0.0" y="45" width="223" height="195"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_pop_in_tips" translatesAutoresizingMaskIntoConstraints="NO" id="pFd-fP-hnh">
+                                    <rect key="frame" x="0.0" y="0.0" width="223" height="195"/>
+                                </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3b-h5-lx2">
+                                    <rect key="frame" x="66.5" y="142" width="90" height="35"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="35" id="Gv8-EH-n2q"/>
+                                        <constraint firstAttribute="width" constant="90" id="YUY-tC-t76"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <state key="normal" title="Button" backgroundImage="qm_btn_pop_game_download"/>
+                                    <connections>
+                                        <action selector="btn_startOrDownload_click:" destination="-1" eventType="touchUpInside" id="hUO-67-VyE"/>
+                                    </connections>
+                                </button>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqI-mb-ocP">
+                                    <rect key="frame" x="25" y="36" width="173" height="18"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="NqI-mb-ocP" firstAttribute="top" secondItem="hhR-0P-yP9" secondAttribute="top" constant="36" id="1wp-14-6IT"/>
+                                <constraint firstAttribute="trailing" secondItem="NqI-mb-ocP" secondAttribute="trailing" constant="25" id="3iY-ep-Kj9"/>
+                                <constraint firstItem="M3b-h5-lx2" firstAttribute="centerX" secondItem="hhR-0P-yP9" secondAttribute="centerX" id="5oj-4D-TY0"/>
+                                <constraint firstAttribute="trailing" secondItem="pFd-fP-hnh" secondAttribute="trailing" id="PiE-CA-SKw"/>
+                                <constraint firstItem="pFd-fP-hnh" firstAttribute="leading" secondItem="hhR-0P-yP9" secondAttribute="leading" id="QWX-5S-rat"/>
+                                <constraint firstItem="pFd-fP-hnh" firstAttribute="top" secondItem="hhR-0P-yP9" secondAttribute="top" id="dQX-n3-MPr"/>
+                                <constraint firstAttribute="bottom" secondItem="M3b-h5-lx2" secondAttribute="bottom" constant="18" id="gVH-V6-5j7"/>
+                                <constraint firstAttribute="bottom" secondItem="pFd-fP-hnh" secondAttribute="bottom" id="pnF-e1-l6k"/>
+                                <constraint firstItem="NqI-mb-ocP" firstAttribute="leading" secondItem="hhR-0P-yP9" secondAttribute="leading" constant="25" id="sqm-6o-7mK"/>
+                                <constraint firstItem="M3b-h5-lx2" firstAttribute="top" relation="greaterThanOrEqual" secondItem="NqI-mb-ocP" secondAttribute="bottom" constant="20" id="tyU-T0-vMy"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="d2d-7Z-StJ" secondAttribute="trailing" id="1Va-c9-Jwj"/>
+                        <constraint firstItem="hhR-0P-yP9" firstAttribute="leading" secondItem="EGa-cc-M06" secondAttribute="leading" id="2O3-Ov-Sev"/>
+                        <constraint firstAttribute="width" constant="223" id="2tL-EC-TLG"/>
+                        <constraint firstAttribute="trailing" secondItem="hhR-0P-yP9" secondAttribute="trailing" id="D4D-7e-6mB"/>
+                        <constraint firstAttribute="bottom" secondItem="fE5-Ot-tuB" secondAttribute="bottom" id="HoP-ra-MCS"/>
+                        <constraint firstItem="d2d-7Z-StJ" firstAttribute="leading" secondItem="EGa-cc-M06" secondAttribute="leading" id="Los-jz-ico"/>
+                        <constraint firstAttribute="trailing" secondItem="fE5-Ot-tuB" secondAttribute="trailing" id="Mf7-kI-Fdg"/>
+                        <constraint firstItem="d2d-7Z-StJ" firstAttribute="top" secondItem="EGa-cc-M06" secondAttribute="top" id="TtX-I4-rgm"/>
+                        <constraint firstItem="fE5-Ot-tuB" firstAttribute="leading" secondItem="EGa-cc-M06" secondAttribute="leading" id="Utv-YR-FYm"/>
+                        <constraint firstItem="hhR-0P-yP9" firstAttribute="top" secondItem="d2d-7Z-StJ" secondAttribute="bottom" id="cD3-Je-SLV"/>
+                        <constraint firstItem="fE5-Ot-tuB" firstAttribute="top" secondItem="EGa-cc-M06" secondAttribute="top" id="e0T-Z7-YD8"/>
+                        <constraint firstAttribute="bottom" secondItem="hhR-0P-yP9" secondAttribute="bottom" id="hPo-d0-vq9"/>
+                        <constraint firstAttribute="height" constant="240" id="n94-5j-t8U"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="34K-ah-3T8">
+                    <rect key="frame" x="267.5" y="207" width="37" height="37"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="37" id="oYL-Tu-WZt"/>
+                        <constraint firstAttribute="width" constant="37" id="vVB-99-CWd"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="qm_btn_pop_close"/>
+                    <connections>
+                        <action selector="btn_close_click:" destination="-1" eventType="touchUpInside" id="anB-t6-en9"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="EGa-cc-M06" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="69n-AJ-LA2"/>
+                <constraint firstItem="EGa-cc-M06" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="7NA-lz-KM2"/>
+                <constraint firstItem="34K-ah-3T8" firstAttribute="top" secondItem="EGa-cc-M06" secondAttribute="top" constant="-6" id="IZb-HS-LAM"/>
+                <constraint firstItem="34K-ah-3T8" firstAttribute="trailing" secondItem="EGa-cc-M06" secondAttribute="trailing" constant="6" id="jyj-Im-x5D"/>
+            </constraints>
+            <point key="canvasLocation" x="24.5" y="51.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="qm_bg_pop_in_tips" width="223" height="195"/>
+        <image name="qm_bg_pop_out_tips" width="223" height="240"/>
+        <image name="qm_btn_pop_close" width="37" height="37"/>
+        <image name="qm_btn_pop_game_download" width="90" height="35"/>
+    </resources>
+</document>

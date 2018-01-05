@@ -122,12 +122,7 @@
     GangInfoBeanData *infoData = dataArray[indexPath.row];
     cell.baseCellDelegate = self;
     [cell setTheObj:infoData];
-    if (infoData.consortiaid != nil) {
-        cell.consortiaid = infoData.consortiaid;
-    }
     cell.label_listNumber.text = [NSString stringWithFormat:@"%ld",(long)indexPath.row+1];
-    [cell.label_listNumber setTextColor:[UIColor colorFromHexRGB:GangColor_gangLists_rankListNum]];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 #pragma mark - UITableViewDelegate
@@ -252,7 +247,6 @@
         }
     } fail:^(NSError * _Nullable error) {
         [[UIApplication sharedApplication].keyWindow removeLoading];
-        [[UIApplication sharedApplication].keyWindow toastTheMsg:[NSString stringWithFormat:@"加入%@失败",GangSDKInstance.settingBean.data.gamevariable.gangname]];
         if (error) {
             [[UIApplication sharedApplication].keyWindow toastTheMsg:error.domain];
         }

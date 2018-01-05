@@ -14,6 +14,8 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     // Initialization code
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.label_listNumber setTextColor:[UIColor colorFromHexRGB:GangColor_gangLists_rankListNum]];
     [self.label_gangName setTextColor:[UIColor colorFromHexRGB:GangColor_gangLists_gangName]];
     [self.label_gangLevel setTextColor:[UIColor colorFromHexRGB:GangColor_gangLists_gangName]];
     [self.label_gangNowNum setTextColor:[UIColor colorFromHexRGB:GangColor_gangLists_gangNum]];
@@ -27,18 +29,10 @@
 - (void)setTheObj:(GangInfoBeanData *)obj{
     [super setTheObj:obj];
     GangInfoBeanData *infoData = self.obj_hold;
-    if (infoData.consortiaid != nil) {
-        self.consortiaid = infoData.consortiaid;
-    }
-    if (infoData.consortianame != nil) {
-        self.label_gangName.text = infoData.consortianame;
-    }
-    if (infoData.declaration != nil) {
-        self.label_gangDeclaration.text = infoData.declaration;
-    }
-    if (infoData.iconurl != nil) {
-        [self.iv_gangIcon setImageWithURLString:infoData.iconurl placeholder:nil];
-    }
+    self.consortiaid = infoData.consortiaid;
+    self.label_gangName.text = infoData.consortianame;
+    self.label_gangDeclaration.text = infoData.declaration;
+    [self.iv_gangIcon setImageWithURLString:infoData.iconurl placeholder:nil];
     self.label_gangLevel.text = [NSString stringWithFormat:@"%ld级",(long)infoData.buildlevel];
     self.label_gangNowNum.text = [NSString stringWithFormat:@"%ld",(long)infoData.nownum];
 }

@@ -102,4 +102,8 @@
  */
 -(void)showGangInfo:(UIViewController *_Nonnull)controller ofId:(NSString *_Nonnull)consortiaid;
 
+/**
+ 开启适配iphoneX
+ */
+-(void)setFitIphoneX;
 @end

@@ -9,5 +9,6 @@
 #import "GangBasePresentViewController.h"
 
 @interface GangGangInfoViewController : GangBasePresentViewController
+@property (weak, nonatomic) IBOutlet UIButton *btn_apply;
 @property (strong) NSString *consortiaid;
 @end

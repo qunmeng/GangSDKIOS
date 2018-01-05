@@ -14,6 +14,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
     //社群等级字体颜色
     [self.label_gangLevel setTextColor:[UIColor colorFromHexRGB:GangColor_apply_gangLevel]];
     //社群名称字体颜色
@@ -31,15 +32,9 @@
 - (void)setTheObj:(GangQueryListItemBean *)obj{
     [super setTheObj:obj];
     GangQueryListItemBean *infoData = self.obj_hold;
-    if (infoData.consortianame != nil) {
-        self.label_gangName.text = infoData.consortianame;
-    }
-    if (infoData.declaration != nil) {
-        self.label_gangDeclaration.text = infoData.declaration;
-    }
-    if (infoData.iconurl != nil) {
-        [self.iv_gangIcon setImageWithURLString:infoData.iconurl placeholder:nil];
-    }
+    self.label_gangName.text = infoData.consortianame;
+    self.label_gangDeclaration.text = infoData.declaration;
+    [self.iv_gangIcon setImageWithURLString:infoData.iconurl placeholder:nil];
     self.label_gangLevel.text = [NSString stringWithFormat:@"%@级",infoData.buildlevel];
     self.label_gangNowNum.text = [NSString stringWithFormat:@"%ld",(long)infoData.nownum];
     

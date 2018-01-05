@@ -12,6 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GangCreateViewController">
             <connections>
                 <outlet property="collectionView" destination="5mf-Su-q4G" id="Krh-7F-ry8"/>
+                <outlet property="constraint_height_statusBar" destination="zHI-fV-68M" id="fgU-nD-qeS"/>
                 <outlet property="iv_gangIcon" destination="X8o-K3-rZA" id="Sc0-HB-jbC"/>
                 <outlet property="iv_iconFrame" destination="9yj-j1-A15" id="QcI-HW-bng"/>
                 <outlet property="label_gangDeclaration" destination="fid-C4-EdC" id="tZW-oV-8KC"/>
@@ -29,7 +30,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_main" translatesAutoresizingMaskIntoConstraints="NO" id="zgl-1m-Zx9">
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="qm_bg_main" translatesAutoresizingMaskIntoConstraints="NO" id="zgl-1m-Zx9">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </imageView>

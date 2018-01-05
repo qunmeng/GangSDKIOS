@@ -13,6 +13,7 @@
 @interface GangCreateViewController ()<UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate,GangBaseCollectionViewCellDelegate>{
     NSString *iconString;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_statusBar;
 @property (weak, nonatomic) IBOutlet UITextField *textField_GangName;
 @property (weak, nonatomic) IBOutlet UIImageView *iv_gangIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *iv_iconFrame;
@@ -40,6 +41,9 @@
 
 - (void)setTheSubviews{
     [super setTheSubviews];
+    if (GangUIInstance.needFitIphoneX) {
+        self.constraint_height_statusBar.constant += 10;
+    }
     //设置标题的字体 大小 颜色
     self.label_titleView.font = [UIFont fontWithName:GangFont_title size:GangFontSize_title];
     [self.label_titleView setTextColor:[UIColor colorFromHexRGB:GangColor_title]];
@@ -116,7 +120,6 @@
         [self pushViewController:[[GangInViewController alloc] init]];
     } fail:^(NSError * _Nullable error) {
         [self gang_removeLoading];
-        [self gang_toast:@"创建失败"];
         if (error) {
             [self gang_toast:error.domain];
         }

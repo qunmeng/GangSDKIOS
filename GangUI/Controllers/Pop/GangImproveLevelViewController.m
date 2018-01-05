@@ -31,7 +31,6 @@
     [self.btn_cancel setTitle:[GangTools getLocalizationOfKey:@"取消"] forState:UIControlStateNormal];
     [self.btn_cancel setTitleColor:[UIColor colorFromHexRGB:GangColor_pop_cancelButton] forState:UIControlStateNormal];
     
-    
     NSMutableAttributedString *ats = [[NSMutableAttributedString alloc] init];
     [ats appendAttributedString:[GangTools getshowContent:[NSString stringWithFormat:@"%@等级：",GangSDKInstance.settingBean.data.gamevariable.gangname] textColor:[UIColor colorFromHexRGB:GangColor_pop_upLevel_content] font:[UIFont systemFontOfSize:13] lineSpace:4 paraSpace:0]];
     [ats appendAttributedString:[GangTools getshowContent:[NSString stringWithFormat:@"L%ld>>>L%ld",(long)self.levelNow,(long)self.levelNow+1] textColor:[UIColor colorFromHexRGB:GangColor_pop_upLevel_contentKey] font:[UIFont systemFontOfSize:13] lineSpace:4 paraSpace:0]];

@@ -74,7 +74,6 @@
     GangInfoBeanData *infoData = dataArray[indexPath.row];
     cell.baseCellDelegate = self;
     [cell setTheObj:infoData];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -122,7 +121,6 @@
         }
     } fail:^(NSError * _Nullable error) {
         [[UIApplication sharedApplication].keyWindow removeLoading];
-        [[UIApplication sharedApplication].keyWindow toastTheMsg:[NSString stringWithFormat:@"加入%@失败",GangSDKInstance.settingBean.data.gamevariable.gangname]];
         if (error) {
             [[UIApplication sharedApplication].keyWindow toastTheMsg:error.domain];
         }

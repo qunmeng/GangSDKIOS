@@ -8,6 +8,7 @@
 
 #import "GangGangInfoViewController.h"
 #import <GangSupport/MGWebImage.h>
+#import "GangInViewController.h"
 @interface GangGangInfoViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *label_title;
 @property (weak, nonatomic) IBOutlet UILabel *label_gangName;
@@ -21,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *iv_gangAvatar;
 @property (weak, nonatomic) IBOutlet UILabel *label_gangDeclaration;
 @property (weak, nonatomic) IBOutlet UILabel *label_declaration;
+
 
 
 @end
@@ -48,6 +50,13 @@
     [self.label_wealthNum setTextColor:[UIColor colorFromHexRGB:GangColor_pop_gangInfo_content]];
     [self.label_gangDeclaration setTextColor:[UIColor colorFromHexRGB:GangColor_pop_gangInfo_content]];
     [self.label_declaration setTextColor:[UIColor colorFromHexRGB:GangColor_pop_gangInfo_content]];
+    if (GangSDKInstance.userBean.data.consortiaid.integerValue > 0) {
+        [self.btn_apply setTitle:@"关闭" forState:UIControlStateNormal];
+        [self.btn_apply setTitleColor:[UIColor colorFromHexRGB:GangColor_pop_gangInfo_btn_apply] forState:UIControlStateNormal];
+    } else {
+        [self.btn_apply setTitle:@"申请加入" forState:UIControlStateNormal];
+        [self.btn_apply setTitleColor:[UIColor colorFromHexRGB:GangColor_pop_gangInfo_btn_apply] forState:UIControlStateNormal];
+    }
     [self getData];
 }
 
@@ -67,7 +76,9 @@
         [self.iv_gangAvatar setImageWithURLString:result.data.iconurl];
     } fail:^(NSError * _Nullable error) {
         [[UIApplication sharedApplication].keyWindow removeLoading];
-        [self gang_toast:[GangTools getLocalizationOfKey:@"获取信息失败!"]];
+        if (error) {
+            [[UIApplication sharedApplication].keyWindow toastTheMsg:error.domain];
+        }
     }];
 }
 - (void)didReceiveMemoryWarning {
@@ -78,6 +89,26 @@
 #pragma mark - buttonAction
 - (IBAction)btn_closeClick:(UIButton *)sender {
     [self dismissViewController];
+}
+- (IBAction)btn_apply_click:(UIButton *)sender {
+    if ([@"申请加入" isEqualToString:self.btn_apply.titleLabel.text]) {
+        [[UIApplication sharedApplication].keyWindow showLoadingWithInfo:@"正在请求数据"];
+        [GangSDKInstance.userManager applyJoinGangWithConsortiaid:self.consortiaid success:^(GangInfoBean *result) {
+            [[UIApplication sharedApplication].keyWindow removeLoading];
+            if (result.data) {
+                [self pushViewController:[[GangInViewController alloc] init]];
+            } else {
+                [[UIApplication sharedApplication].keyWindow toastTheMsg:@"已发送申请"];
+            }
+        } fail:^(NSError * _Nullable error) {
+            [[UIApplication sharedApplication].keyWindow removeLoading];
+            if (error) {
+                [[UIApplication sharedApplication].keyWindow toastTheMsg:error.domain];
+            }
+        }];
+    } else {
+        [self dismissViewController];
+    }
 }
 
 @end

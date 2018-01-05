@@ -14,6 +14,7 @@
 @interface GangManageApplyViewController ()<UITableViewDataSource,UITableViewDelegate,TableViewRefreshDelegate,TableViewLoadMoreDelegate,GangBaseTableViewCellDelegate>{
     NSMutableArray *datas;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_statusBar;
 @property (weak, nonatomic) IBOutlet UILabel *label_titleView;
 @property (weak, nonatomic) IBOutlet GangBaseLoadMoreTableView *tableView;
 
@@ -32,6 +33,10 @@
 
 -(void)setTheSubviews{
     [super setTheSubviews];
+    if (GangUIInstance.needFitIphoneX) {
+        self.constraint_height_statusBar.constant += 10;
+    }
+    
     self.label_titleView.font = [UIFont fontWithName:GangFont_title size:GangFontSize_title];
     self.label_titleView.textColor = [UIColor colorFromHexRGB:GangColor_title];
     self.tableView.refreshDelegate = self;

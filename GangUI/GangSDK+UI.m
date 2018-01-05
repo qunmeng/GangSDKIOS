@@ -37,4 +37,8 @@
 -(void)showGangInfo:(UIViewController *)controller ofId:(NSString *)consortiaid{
     [GangUI showGangInfo:controller ofId:consortiaid];
 }
+
+-(void)setFitIphoneX{
+    GangUIInstance.needFitIphoneX = YES;
+}
 @end

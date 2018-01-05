@@ -18,6 +18,7 @@
     NSMutableArray *datas_rights;//缓存各职位权限
     NSInteger position_select;
 }
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_statusBar;
 @property (weak, nonatomic) IBOutlet UILabel *label_titleView_title;
 @property (weak, nonatomic) IBOutlet UIButton *btn_reload;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -43,6 +44,10 @@
 
 -(void)setTheSubviews{
     [super setTheSubviews];
+    if (GangUIInstance.needFitIphoneX) {
+        self.constraint_height_statusBar.constant += 10;
+    }
+    
     self.label_titleView_title.font = [UIFont fontWithName:GangFont_title size:GangFontSize_title];
     self.label_titleView_title.textColor = [UIColor colorFromHexRGB:GangColor_title];
     self.label_title_position.textColor = [UIColor colorFromHexRGB:GangColor_managePosition_title];
@@ -59,7 +64,13 @@
     [GangSDKInstance.groupManager getGangRoleAndAccess:^(GangPositionListBean * _Nullable data) {
         [self gang_removeLoading];
         datas = data.data;
-        self.btn_save.enabled = datas.canedit;
+        if (!datas.canedit) {
+            self.btn_save.hidden = YES;
+            self.btn_cancel.hidden = YES;
+        } else {
+            self.btn_save.hidden = NO;
+            self.btn_cancel.hidden = NO;
+        }
         [self.tableView_positon reloadData];
         //处理数据
         datas_rights = [NSMutableArray array];

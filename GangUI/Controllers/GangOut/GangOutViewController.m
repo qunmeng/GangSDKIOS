@@ -12,14 +12,23 @@
 #import "GangRecruitViewController.h"
 #import "GangRecommendViewController.h"
 #import "GangApplyViewController.h"
-#import "GangInviteViewController.h"
 #import "GangCreateViewController.h"
 #import "GangInViewController.h"
+#import "GangCenterMessageViewController.h"
+#import "GangCenterGameViewController.h"
+#import "GangCenterUserViewController.h"
 
 @interface GangOutViewController ()<MoreListViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *topScrollView_holder;
 @property (weak, nonatomic) IBOutlet UIScrollView *bottomScrollView_holder;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_statusBar;
 @property (weak, nonatomic) IBOutlet UILabel *label_titleView;
+@property (weak, nonatomic) IBOutlet UIButton *btn_messageCenter;
+@property (weak, nonatomic) IBOutlet UIButton *btn_gameCenter;
+@property (weak, nonatomic) IBOutlet UIButton *btn_userCenter;
+@property (weak, nonatomic) IBOutlet UIView *view_createGang;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_margin_bottom_viewCreateGang;
+@property (weak, nonatomic) IBOutlet UIImageView *iv_messageCenter_redPoint;
 
 @end
 
@@ -40,26 +49,30 @@
 
 -(void)setTheDatas{
     [super setTheDatas];
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshInventPoint:) name:Gang_notify_receiveGangInvite object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(refreshMessagePoint) name:Gang_notify_receiveGangNotifyMessage object:nil];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(applyAccept:) name:Gang_notify_receiveGangAgree object:nil];
 }
 
 //邀请红点控制
--(void)refreshInventPoint:(NSNotification*)sender{
-    GangOutTopScrollItem *inventItem = [self.array_items lastObject];
-    if (sender.userInfo) {
-        inventItem.iv_point.hidden = NO;
-    }else{
-        inventItem.iv_point.hidden = YES;
+-(void)refreshMessagePoint{
+    if (GangSDKInstance.userBean.data.hasmessage) {
+        self.iv_messageCenter_redPoint.hidden = NO;
+    } else {
+        self.iv_messageCenter_redPoint.hidden = YES;
     }
 }
 //同意加入
 -(void)applyAccept:(NSNotification*)sender{
+    GangSDKInstance.userBean.data.hasmessage = YES;
     [self pushViewController:[[GangInViewController alloc] init]];
 }
 
 - (void)setTheSubviews{
     [super setTheSubviews];
+    if (GangUIInstance.needFitIphoneX) {
+        self.constraint_height_statusBar.constant += 10;
+    }
+    
     self.noScrollAnimation = YES;
     //设置标题的字体 大小 颜色
     self.label_titleView.font = [UIFont fontWithName:GangFont_title size:GangFontSize_title];
@@ -73,7 +86,7 @@
     vc.title = [NSString stringWithFormat:@"%@%@",GangSDKInstance.settingBean.data.gamevariable.gangname,[GangTools getLocalizationOfKey:@"排行"]];
     [self addAnChildActivity:vc];
     vc = [[GangRecruitViewController alloc] init];
-    vc.title = [GangTools getLocalizationOfKey:@"招募频道"];
+    vc.title = [GangTools getLocalizationOfKey:@"招募"];
     [self addAnChildActivity:vc];
     vc = [[GangRecommendViewController alloc] init];
     vc.title = [NSString stringWithFormat:@"%@%@",GangSDKInstance.settingBean.data.gamevariable.gangname,[GangTools getLocalizationOfKey:@"推荐"]];
@@ -81,9 +94,10 @@
     vc = [[GangApplyViewController alloc] init];
     vc.title = [GangTools getLocalizationOfKey:@"已申请"];
     [self addAnChildActivity:vc];
-    vc = [[GangInviteViewController alloc] init];
-    vc.title = [GangTools getLocalizationOfKey:@"邀请加入"];
-    [self addAnChildActivity:vc];
+    
+    [self.view_createGang addGestureRecognizer:[[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePan:)]];
+    
+    [self refreshMessagePoint];
 }
 
 - (void)setTheSubviewsAfterLayout{
@@ -94,6 +108,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+//拖动
+- (void) handlePan:(UIPanGestureRecognizer *)recognizer
+{
+    CGPoint translatedPoint = [recognizer translationInView:self.view];
+    CGFloat y = self.view_createGang.frame.origin.y + translatedPoint.y;
+    
+    if (y>106&&y<self.view.bounds.size.height-self.view_createGang.bounds.size.height-52) {
+        self.constraint_margin_bottom_viewCreateGang.constant = self.view.bounds.size.height-y-self.view_createGang.bounds.size.height;
+    }
+    
+    [recognizer setTranslation:CGPointMake(0, 0) inView:self.view];
 }
 
 #pragma mark - override
@@ -109,26 +136,12 @@
         [item.btn setBackgroundImage:[UIImage imageNamed:@"qm_btn_tab_selected"]forState:UIControlStateNormal];
         [item.btn setTitleColor:[UIColor colorFromHexRGB:GangColor_tab_selected] forState:UIControlStateNormal];
     }
-    if (index==4) {
-        if (GangSDKInstance.userBean.data.hasvisited) {
-            item.iv_point.hidden = NO;
-        }
-    }
     return item;
 }
 
 #pragma mark - MoreListViewControllerDelegate
 - (void)hasShowTheController:(CodoneViewController *)controller{
-    if ([controller isKindOfClass:[GangInviteViewController class]]) {
-        GangOutTopScrollItem *workItem = [self.array_items lastObject];
-        if (!workItem.iv_point.hidden) {
-            [controller refreshTheControllerNoJudge:YES];
-        }else{
-            [controller refreshTheControllerNoJudge:NO];
-        }
-    }else{
-        [controller refreshTheControllerNoJudge:NO];
-    }
+    [controller refreshTheControllerNoJudge:NO];
 }
 - (void)clickTheSelectedItemOfController:(CodoneViewController *)controller{
     [controller refreshTheControllerNoJudge:YES];
@@ -141,11 +154,28 @@
     }else{
         [self popViewController];
     }
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"changeNavigationBarHidden" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:Gang_notify_exitGangUI object:nil];
 }
+
 - (IBAction)btn_creatGangClick:(UIButton *)sender {
     GangCreateViewController *createVC = [[GangCreateViewController alloc] init];
     [self pushViewController:createVC];
 }
+
+- (IBAction)btn_messageCenter_click:(UIButton *)sender {
+    GangCenterMessageViewController *messageVC = [[GangCenterMessageViewController alloc] init];
+    [self pushViewController:messageVC];
+}
+
+- (IBAction)btn_gameCenter_click:(UIButton *)sender {
+    GangCenterGameViewController *gameVC = [[GangCenterGameViewController alloc] init];
+    [self pushViewController:gameVC];
+}
+
+- (IBAction)btn_userCenter_click:(UIButton *)sender {
+    GangCenterUserViewController *userVC = [[GangCenterUserViewController alloc] init];
+    [self pushViewController:userVC];
+}
+
 
 @end

@@ -111,7 +111,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="aGl-lX-qeE" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="qgd-JY-l1r" secondAttribute="leading" id="6rt-C3-3dr"/>
+                                    <constraint firstItem="aGl-lX-qeE" firstAttribute="leading" secondItem="qgd-JY-l1r" secondAttribute="leading" id="6rt-C3-3dr"/>
                                     <constraint firstItem="WEv-CI-h2O" firstAttribute="leading" secondItem="qgd-JY-l1r" secondAttribute="leading" id="9ZZ-dR-loT"/>
                                     <constraint firstAttribute="bottom" secondItem="WEv-CI-h2O" secondAttribute="bottom" id="A57-gi-SHT"/>
                                     <constraint firstItem="cHe-eZ-TEU" firstAttribute="centerY" secondItem="Bn4-jN-mZV" secondAttribute="centerY" id="CK4-kR-b6c"/>
@@ -140,7 +140,6 @@
                 <constraints>
                     <constraint firstAttribute="trailing" secondItem="ud8-th-MJM" secondAttribute="trailing" constant="23" id="KJu-di-8cn"/>
                     <constraint firstItem="3sg-DI-v8L" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ccF-4B-1DK"/>
-                    <constraint firstItem="ud8-th-MJM" firstAttribute="top" secondItem="3sg-DI-v8L" secondAttribute="bottom" id="dnS-eE-NhM"/>
                     <constraint firstAttribute="trailing" secondItem="3sg-DI-v8L" secondAttribute="trailing" id="kAt-oG-gka"/>
                     <constraint firstItem="ud8-th-MJM" firstAttribute="top" secondItem="3sg-DI-v8L" secondAttribute="bottom" id="ogt-I3-bjf"/>
                     <constraint firstAttribute="bottom" secondItem="ud8-th-MJM" secondAttribute="bottom" constant="6" id="q2j-Eb-Qkv"/>
@@ -159,6 +158,7 @@
                 <outlet property="label_nickname" destination="Bn4-jN-mZV" id="aDa-MW-FUN"/>
                 <outlet property="label_time" destination="ePb-vj-QZ5" id="EZf-QS-QUl"/>
                 <outlet property="label_voiceTime" destination="0So-gf-klR" id="wmy-2V-TZy"/>
+                <outlet property="view_all" destination="ud8-th-MJM" id="7os-ls-kSe"/>
                 <outlet property="view_time" destination="3sg-DI-v8L" id="EuX-9E-pyz"/>
             </connections>
         </tableViewCell>

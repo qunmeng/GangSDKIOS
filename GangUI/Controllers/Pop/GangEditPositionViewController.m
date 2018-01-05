@@ -45,7 +45,7 @@
 -(void)setTheSubviews{
     [super setTheSubviews];
     [self setUpHideInputTap];
-    [self setupKeyboardManageForHeight:128 atCenterY:self.constraint_centerY_view];
+    [self setupKeyboardManageForHeight:240 atCenterY:self.constraint_centerY_view];
 }
 
 -(void)viewDidAppear:(BOOL)animated{

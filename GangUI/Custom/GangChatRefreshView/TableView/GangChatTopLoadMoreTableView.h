@@ -17,6 +17,11 @@
 @property(weak) id<TableViewTopLoadMoreDelegate> loadMoreDelegate;
 
 /**
+ *特殊情况已设置完成
+ */
+-(void)beEnable;
+
+/**
  *根据下拉刷新的数据判断是否显示footer进行上拉加载
  *默认隐藏
  */

@@ -10,6 +10,7 @@
 #define GangUIHeader_h
 
 #import <GangSDK/GangSDK.h>
+#import "GangUI.h"
 #import "GangUIFont.h"
 #import "GangTools.h"
 #import "UIView+GangNormalToastView.h"
@@ -18,6 +19,7 @@
 #define GangPageSize 20
 
 #pragma 广播
+#define Gang_notify_exitGangUI      @"GangExitGangUI"       /**<退出GangUI界面*/
 #define Gang_notify_userInfoChanged @"GangUserInfoChanged"  /**<需要刷新用户信息*/
 #define Gang_notify_infoChanged     @"GangInfoChanged"      /**<需要刷新社群信息*/
 #define Gang_notify_MembersChanged  @"GangMembersChanged"   /**<需要刷新成员列表*/

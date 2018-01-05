@@ -26,6 +26,4 @@
 @property(strong) NSString *labelurl;      /**<社群标签*/
 @property(assign) NSInteger nownum;        /**<社群当前人数*/
 @property(strong) NSString *declaration;   /**<社群宣言*/
-#pragma 邀请社群
-@property(strong) NSString *visitid;       /**<邀请id*/
 @end

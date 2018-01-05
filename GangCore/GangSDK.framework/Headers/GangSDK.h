@@ -11,6 +11,7 @@
 #import "GangMemberManager.h"
 #import "GangGroupManager.h"
 #import "GangChatManager.h"
+#import "GangGameManager.h"
 #import "GangSettingBean.h"
 
 #define GangLog(...) \
@@ -22,20 +23,25 @@ NSLog(__VA_ARGS__);\
 #define Gang_notify_joinGang        @"GangJoinGang"                 /**<加入了社群*/
 #define Gang_notify_leaveGang       @"GangLeaveGang"                /**<离开了社群(自己退出了、被踢了、社群被解散了等)*/
 
+#define GangSDKInstance [GangSDK instance]                          /**<GangSDK单例*/
+
 @interface GangSDK : NSObject
-#pragma mark - 数据缓存
 @property(assign) BOOL showLog;                                     /**<是否打印日志*/
+@property(assign) BOOL autoRetry;                                   /**<是否在登录失败后自动重试(default is YES)*/
+
+#pragma mark - 数据缓存
 @property(strong) NSString * _Nonnull gamekey;                      /**<申请到的key*/
 @property(strong) GangSettingBean * _Nullable settingBean;          /**<设置信息,开发者在GangSDK管理平台上配置的所有信息*/
 @property(strong) GangUserBean * _Nullable userBean;                /**<用户信息,登录用户的所有信息和状态*/
+@property(assign) BOOL isLoginOnOtherPlat;                          /**<在其他设备登录了，被挤掉线了*/
 #pragma mark - 各管理类实例
-#define GangSDKInstance [GangSDK instance]                          /**<GangSDK单例*/
 @property(strong) GangUserManager *_Nullable userManager;           /**<用户管理类*/
 @property(strong) GangMemberManager *_Nullable memberManager;       /**<成员管理类*/
 @property(strong) GangGroupManager *_Nullable groupManager;         /**<社群管理类*/
 @property(strong) GangChatManager *_Nullable chatManager;           /**<聊天管理类*/
+@property(strong) GangGameManager *_Nullable gameManager;           /**<推荐游戏管理类*/
 
-+ (instancetype _Nonnull)instance;
++ (instancetype _Nullable)instance;
 - (instancetype _Nullable)init NS_UNAVAILABLE;
 
 /**
@@ -47,7 +53,7 @@ NSLog(__VA_ARGS__);\
 -(void)init:(NSString *_Nullable)key showDebug:(BOOL)show;
 
 /**
- SDK 登录，如果切换了用户需要再次调用
+ SDK 登录，如果切换了用户需要再次调用;如果登录失败默认会自动再次登录(如果不想自动登录设置autoRetry=NO)
  *
  *  @param gameUserid  接入应用中的用户id(用来区别用户的唯一标识符，可以为空则会自动生成)
  *  @param nickname    接入应用中的用户昵称(可以为空则在进入界面前会弹出设置昵称界面)
@@ -59,13 +65,13 @@ NSLog(__VA_ARGS__);\
  *  @param failure     失败的回调
  */
 - (void)login:(NSString *_Nullable)gameUserid
-            nickname:(NSString *_Nullable)nickname
-         headIconUrl:(NSString *_Nullable)headIconUrl
-           gameLevel:(NSInteger)gameLevel
-            gameRole:(NSString *_Nullable)gameRole
-           extParams:(NSDictionary *_Nullable)extDic
-             success:(void (^_Nullable)(void))success
-             failure:(void (^_Nullable)(NSError * _Nullable error))failure;
+     nickname:(NSString *_Nullable)nickname
+  headIconUrl:(NSString *_Nullable)headIconUrl
+    gameLevel:(NSInteger)gameLevel
+     gameRole:(NSString *_Nullable)gameRole
+    extParams:(NSDictionary *_Nullable)extDic
+      success:(void (^_Nullable)(void))success
+      failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
 
 #pragma mark - 重载方法
@@ -75,7 +81,7 @@ NSLog(__VA_ARGS__);\
  *  @param failure     失败的回调
  */
 - (void)login:(void (^_Nullable)(void))success
-        failure:(void (^_Nullable)(NSError * _Nullable error))failure;
+      failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
 /**
  SDK 登录，头像使用默认头像，应用内等级为0，没有应用内角色等
@@ -95,9 +101,9 @@ NSLog(__VA_ARGS__);\
  *  @param failure     失败的回调
  */
 - (void)login:(NSString *_Nullable)gameUserid
-       nickname:(NSString *_Nullable)nickname
-        success:(void (^_Nullable)(void))success
-        failure:(void (^_Nullable)(NSError * _Nullable error))failure;
+     nickname:(NSString *_Nullable)nickname
+      success:(void (^_Nullable)(void))success
+      failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
 /**
  SDK 登录，应用内等级为0，没有应用内角色等
@@ -108,9 +114,17 @@ NSLog(__VA_ARGS__);\
  *  @param failure     失败的回调
  */
 - (void)login:(NSString *_Nullable)gameUserid
-       nickname:(NSString *_Nullable)nickname
-    headIconUrl:(NSString *_Nullable)headIconUrl
-        success:(void (^_Nullable)(void))success
-        failure:(void (^_Nullable)(NSError * _Nullable error))failure;
+     nickname:(NSString *_Nullable)nickname
+  headIconUrl:(NSString *_Nullable)headIconUrl
+      success:(void (^_Nullable)(void))success
+      failure:(void (^_Nullable)(NSError * _Nullable error))failure;
+
+/**
+ SDK 重新登录（已经登录过一次，因为某种情况退出了登录，需要再次登录的情况下可以调用）
+ @param success 成功的回调
+ @param failure 失败的回调
+ */
+-(void)reLogin:(void (^_Nullable)(void))success
+       failure:(void (^_Nullable)(NSError * _Nullable error))failure;
 
 @end

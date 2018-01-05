@@ -23,6 +23,10 @@
 
 -(void)headClick{
     if (self.baseCellDelegate&&[self.baseCellDelegate respondsToSelector:@selector(selector1:)]) {
+        GangChatMessageBean *bean = self.obj_hold;
+        CGPoint point = [self.view_all convertPoint:self.iv_head.frame.origin toView:[UIApplication sharedApplication].keyWindow];
+        bean.x = point.x;
+        bean.y = point.y;
         [self.baseCellDelegate selector1:self.obj_hold];
     }
 }
@@ -42,12 +46,19 @@
     [super setTheObj:obj];
     self.label_time.text = [CodoneTools getTimeStringFromScends:[obj.createtime integerValue]/1000];
     [self.iv_head setImageWithURLString:obj.iconurl];
-    NSString *str_nick = obj.nickname;
-    if (!self.isWorld&&obj.rolename.length>0) {
-        str_nick = [NSString stringWithFormat:@"%@<%@>",str_nick,obj.rolename];
+    if (self.isSingle) {
+        NSMutableAttributedString *ats = [[NSMutableAttributedString alloc] init];
+        [ats appendAttributedString:[GangTools getshowContent:@"我对 " textColor:[UIColor colorFromHexRGB:GangColor_gangChat_message_selfNickName] font:[UIFont systemFontOfSize:11] lineSpace:4 paraSpace:0]];
+        [ats appendAttributedString:[GangTools getshowContent:[NSString stringWithFormat:@"%@ ",obj.tonickname] textColor:[UIColor colorFromHexRGB:GangColor_gangChat_message_friendNickName] font:[UIFont systemFontOfSize:11] lineSpace:4 paraSpace:0]];
+        [ats appendAttributedString:[GangTools getshowContent:@"说：" textColor:[UIColor colorFromHexRGB:GangColor_gangChat_message_selfNickName] font:[UIFont systemFontOfSize:11] lineSpace:4 paraSpace:0]];
+        self.label_nickname.attributedText = ats;
+    }else{
+        NSString *str_nick = obj.nickname;
+        if (!self.isWorld&&obj.rolename.length>0) {
+            str_nick = [NSString stringWithFormat:@"%@<%@>",str_nick,obj.rolename];
+        }
+        self.label_nickname.text = str_nick;
     }
-    self.label_nickname.text = str_nick;
-    self.label_content.attributedText = [[NSAttributedString alloc] initWithString:obj.message];
     float width_flag = 0;
     if (self.isWorld&&obj.consortiaiconurl) {
         width_flag = 19;

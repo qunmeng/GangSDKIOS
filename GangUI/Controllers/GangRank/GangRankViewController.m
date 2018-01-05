@@ -11,6 +11,7 @@
 #import "GangTheListsNormalItemViewController.h"
 
 @interface GangRankViewController ()<MoreListViewControllerDelegate>
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *constraint_height_statusBar;
 @property (weak, nonatomic) IBOutlet UILabel *label_titleView;
 @property (weak, nonatomic) IBOutlet UIScrollView *topScrollView_holder;
 @property (weak, nonatomic) IBOutlet UIScrollView *bottomScrollView_holder;
@@ -26,8 +27,11 @@
 
 -(void)setTheSubviews{
     [super setTheSubviews];
-    self.noScrollAnimation = YES;
+    if (GangUIInstance.needFitIphoneX) {
+        self.constraint_height_statusBar.constant += 10;
+    }
     
+    self.noScrollAnimation = YES;
     self.label_titleView.font = [UIFont fontWithName:GangFont_title size:GangFontSize_title];
     self.label_titleView.textColor = [UIColor colorFromHexRGB:GangColor_title];
     self.label_titleView.text = [NSString stringWithFormat:@"%@排行榜",GangSDKInstance.settingBean.data.gamevariable.gangname];

@@ -20,7 +20,7 @@ typedef enum : NSUInteger {
 #define RefreshAnimationTime 0.2
 
 @interface CodoneRefreshView : UIView
-///默认的边距
+///缓存scrollview默认的contentInset；不能主动设置
 @property(assign) UIEdgeInsets defaultInset;
 ///是否滚动到露出后就刷新
 @property(assign) BOOL autoRefresh;
@@ -34,6 +34,8 @@ typedef enum : NSUInteger {
 @property(copy) void(^loadBlock)(void);
 ///记录当前是否是从 可点击或拉动状态 变化来的
 @property(assign) BOOL isCanPullOrClick;
+///是否设置完成，用于一些特殊情况，default is NO
+@property(assign) BOOL isNotReady;
 
 //创建 工厂方法
 +(id)createACodoneRefreshViewWithName:(NSString*)name;

@@ -6,8 +6,8 @@
 //  Copyright © 2017年 qm. All rights reserved.
 //
 
-#import "GangBaseBean.h"
 #import "GangPositionListBean.h"
+#import "GangGameBean.h"
 
 @class GangUserBeanData;
 @interface GangUserBean : GangBaseBean
@@ -25,6 +25,7 @@
 @property(strong) NSDictionary *ext;                                /**<用户额外信息*/
 @property(assign) BOOL taskfinished;                                /**<任务是否完成*/
 @property(assign) BOOL hasvisited;                                  /**<是否有公会邀请*/
+@property(assign) BOOL hasmessage;                                  /**<是否有未读信息*/
 
 @property(assign) NSInteger roleid;                                 /**<成员职务id*/
 @property(strong) NSString *rolename;                               /**<成员职务*/
@@ -32,9 +33,12 @@
 @property(assign) NSInteger activenum;                              /**<活跃值*/
 @property(assign) NSInteger contributenum;                          /**<贡献值*/
 @property(assign) NSInteger weekcontributenum;                      /**<周贡献值*/
+@property(assign) NSInteger goldnum;                                /**<金币值*/
 @property(assign) BOOL isonline;                                    /**<是否在线*/
 @property(assign) NSInteger lastlogintime;                          /**<最近上线时间时间戳(单位:毫秒)*/
 @property(strong) NSArray<GangPositionListBeanDataItem*> *rolelist; /**<社群角色设置*/
+
+@property(strong) NSArray<GangGameBean*> *playgamelist;             /**<正在玩的游戏列表*/
 
 #pragma 禁言
 @property(assign) BOOL isforbiddenspeak;                            /**<是否被禁言了*/

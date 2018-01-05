@@ -45,10 +45,6 @@
 #define GangColor_recruit_sendMessageButton             @"72471d"//发送按钮的字体颜色
 #define GangColor_recruit_voiceButtonTitle              @"72471d"//语音按钮的标题颜色
 #define GangColor_recruit_endVoiceButtonTitle           @"ffffff"//取消发送语音的标题颜色
-#define GangColor_recruit_message_nickName              @"ffffff"//昵称的字体颜色
-#define GangColor_recruit_message_voiceTime             @"333333"//语音时间的字体颜色
-#define GangColor_recruit_messageColor                  @"0d7293"//消息的颜色
-#define GangColor_recruit_messageColor_right            @"0d7293"//消息的颜色
 
 #pragma -mark 社群推荐
 #define GangColor_recommend_gangLevel                   @"ffffff"//社群等级的字体颜色
@@ -71,7 +67,6 @@
 #define GangColor_invite_gangName                       @"ffffff"//社群名称的字体颜色
 #define GangColor_invite_gangDeclaration                @"0d7293"//社群宣言的字体颜色
 #define GangColor_invite_gangNowNum                     @"0d7293"//社群人数的字体颜色
-#define GangFontSize_invite_buttonTitle                       15 //标题字号
 #define GangColor_invite_refuseButtonTitle              @"72471d"//按钮标题的颜色
 #define GangColor_invite_agreeButtonTitle               @"ffffff"//按钮标题的颜色
 
@@ -91,8 +86,17 @@
 #define GangColor_gangChat_voiceButtonTitle             @"72471d"//语音按钮的标题颜色
 #define GangColor_gangChat_endVoiceButtonTitle          @"ffffff"//取消发送语音的标题颜色
 #define GangColor_gangChat_message_nickName             @"ffffff"//昵称的字体颜色
-#define GangColor_gangChat_messageColor                 @"0d7293"//消息的颜色
-#define GangColor_gangChat_messageColor_right           @"0d7293"//消息的颜色
+#define GangColor_gangChat_messageColor                 @"0d7293"//左边消息的颜色
+#define GangColor_gangChat_messageColor_right           @"0d7293"//右边消息的颜色
+#define GangColor_gangChat_clickHeadItemButton          @"666666"//点击头像后弹出框选项按钮字体的颜色
+//单聊
+#define GangColor_gangChat_message_selfNickName         @"0075ab"//自己的昵称字体颜色
+#define GangColor_gangChat_message_friendNickName       @"ffffff"//朋友的昵称字体颜色
+//特殊消息
+#define GangColor_gangChat_message_title_left           @"0d7293"//标题
+#define GangColor_gangChat_message_content_left         @"4bbde2"//内容
+#define GangColor_gangChat_message_title_right          @"0d7293"//标题
+#define GangColor_gangChat_message_content_right        @"4bbde2"//内容
 
 #pragma -mark 信息
 #define GangColor_gangInfo_title                        @"d27706"//小标题字体颜色
@@ -142,8 +146,8 @@
 #define GangColor_userinfo_name                         @"0d80c9"//昵称字体颜色
 #define GangColor_userinfo_role                         @"0d80c9"//职业字体颜色
 #define GangColor_userinfo_position                     @"ffffff"//职位字体颜色
-#define GangColor_userinfo_btn_kickout                  @"72471d"//踢出按钮文字颜色
-#define GangColor_userinfo_btn_transfer_owner           @"72471d"//转让按钮文字颜色
+#define GangColor_userinfo_btn_kickout                  @"ffffff"//踢出按钮文字颜色
+#define GangColor_userinfo_btn_transfer_owner           @"ffffff"//转让按钮文字颜色
 #define GangColor_userinfo_contributeNum                @"0d80c9"//贡献值字体颜色
 #define GangColor_userinfo_activeNum                    @"0d80c9"//活跃值字体颜色
 #define GangColor_userinfo_itemTitle                    @"d27706"//标题颜色
@@ -151,6 +155,10 @@
 #define GangColor_userinfo_mute_selected                @"ffffff"//禁言按钮选中颜色
 #define GangColor_userinfo_position_normal              @"ffffff"//职位按钮字体颜色
 #define GangColor_userinfo_position_selected            @"ffffff"//职位按钮选中颜色
+#define GangColor_userinfo_gangName                     @"0967a3"//社群名字字体颜色
+#define GangColor_userinfo_btn_dynamic                  @"72471d"//动态按钮文字颜色
+#define GangColor_userinfo_btn_details                  @"ffffff"//详情按钮文字颜色
+#define GangColor_userinfo_gameName                     @"292929"//游戏名称字体颜色
 
 #pragma -mark 管理
 #define GangColor_gangManage_btn_applyList              @"a46d33"//申请列表按钮文字颜色
@@ -196,6 +204,36 @@
 #define GangColor_lists_title                           @"0075ab"//标题
 #define GangColor_lists_num                             @"0d7293"//值
 #define GangColor_lists_rankNum                         @"0d7293"//排名字体颜色
+
+#pragma -mark 游戏中心
+#define GangColor_gameCenter_name                       @"ffffff"//游戏名字字体颜色
+#define GangColor_gameCenter_description                @"1b7d9e"//游戏描述字体颜色
+#define GangColor_gameCenter_btn_download               @"72471d"//下载按钮字体颜色
+#define GangColor_gameCenter_btn_start                  @"ffffff"//启动按钮字体颜色
+
+#pragma -mark 个人中心
+#define GangColor_userCenter_goldNum                    @"209eee"//金币数字体颜色
+#define GangColor_userCenter_level                      @"ffffff"//等级字体颜色
+#define GangColor_userCenter_nickName                   @"0967a3"//玩家昵称字体颜色
+#define GangColor_userCenter_roleName                   @"0967a3"//玩家角色字体颜色
+#define GangColor_userCenter_gangName                   @"0967a3"//社群名称字体颜色
+#define GangColor_userCenter_position                   @"ffffff"//玩家职位字体颜色
+#define GangColor_userCenter_btn_dynamic                @"72471d"//动态按钮字体颜色
+#define GangColor_userCenter_btn_details                @"ffffff"//详情按钮字体颜色
+#define GangColor_userCenter_contributeNum              @"0d80c9"//贡献值字体颜色
+#define GangColor_userCenter_activeNum                  @"0d80c9"//活跃值字体颜色
+#define GangColor_userCenter_itemTitle                  @"d27706"//标题颜色
+#define GangColor_userCenter_gameName                   @"292929"//游戏名称字体颜色
+//社群充值
+#define GangColor_payCenter_itemTitle                   @"0d7293"//标题颜色
+#define GangColor_payCenter_payNum                      @"ffffff"//支付数字字体颜色
+
+#pragma -mark 消息通知
+#define GangColor_messageCenter_senderName              @"ffffff"//发送者名称字体颜色
+#define GangColor_messageCenter_date                    @"0d7293"//发送时间字体颜色
+#define GangColor_messageCenter_content                 @"0d7293"//详细内容字体颜色
+#define GangColor_messageCenter_btn_delete              @"ffffff"//删除按钮字体颜色
+#define GangColor_messageCenter_btn_details             @"ffffff"//详情按钮字体颜色
 
 #pragma -mark 弹出框
 #define GangColor_pop_confirmButton                     @"ffffff"//确认字体颜色
@@ -257,6 +295,7 @@
 #define GangColor_pop_gangInfo_title                    @"ea9601"//社群信息标题字体颜色
 #define GangColor_pop_gangInfo_name                     @"ffffff"//社群信息字体颜色
 #define GangColor_pop_gangInfo_content                  @"ffffff"//社群名称字体颜色
+#define GangColor_pop_gangInfo_btn_apply                @"72471d"//社群名称字体颜色
 //职位改名
 #define GangColor_pop_editPositionName_title            @"ea9601"//标题字体颜色
 #define GangColor_pop_editPositionName_placeHolder      @"dfae7a"//占位符字体颜色
@@ -265,6 +304,20 @@
 #define GangColor_pop_editNickname_title                @"ea9601"//标题字体颜色
 #define GangColor_pop_editeditNickname_placeHolder      @"dfae7a"//占位符字体颜色
 #define GangColor_pop_editeditNickname_inputMessage     @"dfae7a"//输入的字体颜色
+//支付提示
+#define GangColor_pop_gangPay_title                     @"c12900"//标题字体颜色
+#define GangColor_pop_gangPay_content                   @"ffffff"//内容字体颜色
+#define GangColor_pop_gangPay_tip                       @"ffffff"//提示内容字体颜色
+#define GangColor_pop_gangPay_btn_aliPay                @"ffffff"//内容字体颜色
+#define GangColor_pop_gangPay_btn_weixinPay             @"ffffff"//内容字体颜色
+//在玩游戏
+#define GangColor_pop_gangGame_title                    @"c12900"//标题字体颜色
+#define GangColor_pop_gangGame_content                  @"ffffff"//内容字体颜色
+#define GangColor_pop_gangGame_btn                      @"ffffff"//按钮标题字体颜色
+//消息通知
+#define GangColor_pop_messageNotify_title               @"c12900"//标题字体颜色
+#define GangColor_pop_messageNotify_content             @"dfae7a"//内容字体颜色
+#define GangColor_pop_messageNotify_btn_ignore          @"ffffff"//忽略按钮字体颜色
 
 #pragma -mark statubar
 #define GangColor_statusBar_style                       0

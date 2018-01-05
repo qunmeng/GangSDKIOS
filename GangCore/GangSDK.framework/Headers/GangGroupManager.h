@@ -17,7 +17,7 @@
 #import "GangLogListBean.h"
 
 @interface GangGroupManager : NSObject
-+ (instancetype _Nonnull)instance;
++ (instancetype _Nullable)instance;
 - (instancetype _Nullable)init NS_UNAVAILABLE;
 
 #pragma mark - 社群管理相关操作

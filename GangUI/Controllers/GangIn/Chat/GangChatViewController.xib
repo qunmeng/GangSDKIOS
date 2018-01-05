@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -17,6 +17,7 @@
                 <outlet property="btn_msgAndVoice" destination="V0K-I8-42y" id="EB0-Gq-edI"/>
                 <outlet property="btn_record" destination="wao-sF-KjJ" id="8qR-tq-RTQ"/>
                 <outlet property="btn_send" destination="IMo-9e-8dj" id="hg3-Vh-5Yp"/>
+                <outlet property="btn_singleMessage" destination="VJJ-ch-rwr" id="Gdb-i4-Ovw"/>
                 <outlet property="btn_worldMessage" destination="h0F-r9-EAb" id="su2-e8-EAS"/>
                 <outlet property="constraiint_height_tipsTableView" destination="AXc-gv-VZ5" id="3LO-HR-tE7"/>
                 <outlet property="constraint_bottom_inputView" destination="fNn-Hi-VJd" id="Rg5-JR-0kG"/>
@@ -24,6 +25,7 @@
                 <outlet property="iv_recordVoice" destination="h0r-Jm-t9Q" id="4lK-GX-Y8S"/>
                 <outlet property="label_tvPlaceHolder" destination="QwZ-1d-hdm" id="cIE-og-yBE"/>
                 <outlet property="tableView_gang" destination="405-eq-jhm" id="tt6-7f-z0g"/>
+                <outlet property="tableView_single" destination="fXR-wK-X4T" id="dkd-Ph-Ttz"/>
                 <outlet property="tableView_tips" destination="2LO-Py-KbE" id="H11-K6-6as"/>
                 <outlet property="tableView_world" destination="yyO-8y-v1I" id="fCf-0f-aLd"/>
                 <outlet property="tv_input" destination="c2e-mK-5i6" id="0kf-Jp-waU"/>
@@ -82,8 +84,16 @@
                         <outlet property="delegate" destination="-1" id="061-je-pLm"/>
                     </connections>
                 </tableView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fXR-wK-X4T" customClass="GangChatTopLoadMoreTableView">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="675"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="7BM-je-Ddb"/>
+                        <outlet property="delegate" destination="-1" id="9b0-ne-9pu"/>
+                    </connections>
+                </tableView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bqd-sF-NI8">
-                    <rect key="frame" x="32" y="643" width="80" height="32"/>
+                    <rect key="frame" x="12" y="643" width="80" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="FSy-gi-Qcd"/>
                         <constraint firstAttribute="width" constant="80" id="waj-Ie-U0F"/>
@@ -98,7 +108,7 @@
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0F-r9-EAb">
-                    <rect key="frame" x="115" y="643" width="80" height="32"/>
+                    <rect key="frame" x="95" y="643" width="80" height="32"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="80" id="Ejj-HB-0v0"/>
                         <constraint firstAttribute="height" constant="32" id="Yte-JH-bXe"/>
@@ -110,6 +120,21 @@
                     </state>
                     <connections>
                         <action selector="btn_wordMessage_click:" destination="-1" eventType="touchUpInside" id="zXu-eb-ZiZ"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VJJ-ch-rwr">
+                    <rect key="frame" x="178" y="643" width="80" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="80" id="Dfe-Z2-BDN"/>
+                        <constraint firstAttribute="height" constant="32" id="ia2-0b-sVS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <inset key="titleEdgeInsets" minX="0.0" minY="4" maxX="0.0" maxY="0.0"/>
+                    <state key="normal" title="私聊频道" backgroundImage="qm_btn_gangchat_normal">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="btn_singleMessage_click:" destination="-1" eventType="touchUpInside" id="2eK-eB-77u"/>
                     </connections>
                 </button>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YpI-uq-MTN">
@@ -182,7 +207,7 @@
                                 <action selector="btn_moreAction_click:" destination="-1" eventType="touchUpInside" id="q2Z-Vc-meR"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMo-9e-8dj">
+                        <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IMo-9e-8dj">
                             <rect key="frame" x="304" y="7.6666666666666288" width="53" height="28"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="53" id="39Z-Je-aSp"/>
@@ -297,23 +322,29 @@
             <constraints>
                 <constraint firstItem="Ie7-ae-dMH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1pe-M7-SLS"/>
                 <constraint firstItem="Dew-Nt-Z2a" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="1tl-63-Jxn"/>
+                <constraint firstItem="VJJ-ch-rwr" firstAttribute="leading" secondItem="h0F-r9-EAb" secondAttribute="trailing" constant="3" id="6Kq-F8-ELE"/>
                 <constraint firstItem="YpI-uq-MTN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="7GW-1O-OpP"/>
-                <constraint firstItem="Bqd-sF-NI8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="32" id="8nn-uc-sAb"/>
+                <constraint firstItem="Bqd-sF-NI8" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="12" id="8nn-uc-sAb"/>
                 <constraint firstItem="jId-yg-0Mf" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ecn-SM-DNq"/>
                 <constraint firstItem="yyO-8y-v1I" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="IAm-AV-iLp"/>
                 <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="Bqd-sF-NI8" secondAttribute="bottom" id="KBC-Rs-7Ro"/>
                 <constraint firstAttribute="bottom" secondItem="Dew-Nt-Z2a" secondAttribute="bottom" id="MEW-qU-Z0a"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="fXR-wK-X4T" secondAttribute="bottom" id="UEe-Tu-iCo"/>
                 <constraint firstItem="Ie7-ae-dMH" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="Up8-ED-1hG"/>
                 <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="Ie7-ae-dMH" secondAttribute="bottom" id="Xs3-dl-cGY"/>
                 <constraint firstAttribute="trailing" secondItem="Ie7-ae-dMH" secondAttribute="trailing" id="Y3M-Wn-fAy"/>
                 <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="yyO-8y-v1I" secondAttribute="bottom" id="aHV-6c-LMa"/>
+                <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="VJJ-ch-rwr" secondAttribute="bottom" id="bTZ-aj-AAJ"/>
                 <constraint firstAttribute="trailing" secondItem="yyO-8y-v1I" secondAttribute="trailing" id="bqC-t3-Idw"/>
                 <constraint firstItem="yyO-8y-v1I" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dtd-SN-rnW"/>
                 <constraint firstItem="Dew-Nt-Z2a" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eGH-He-Xqr"/>
                 <constraint firstAttribute="trailing" secondItem="YpI-uq-MTN" secondAttribute="trailing" id="fJq-uU-aBl"/>
                 <constraint firstAttribute="bottom" secondItem="YpI-uq-MTN" secondAttribute="bottom" constant="18" id="fNn-Hi-VJd"/>
+                <constraint firstItem="fXR-wK-X4T" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="hov-pO-Ht9"/>
                 <constraint firstAttribute="trailing" secondItem="Dew-Nt-Z2a" secondAttribute="trailing" id="hzz-Kl-BSX"/>
                 <constraint firstItem="jId-yg-0Mf" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iBM-95-sYh"/>
+                <constraint firstItem="fXR-wK-X4T" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ovL-IM-kyi"/>
+                <constraint firstAttribute="trailing" secondItem="fXR-wK-X4T" secondAttribute="trailing" id="tUS-UT-5PM"/>
                 <constraint firstItem="YpI-uq-MTN" firstAttribute="top" secondItem="h0F-r9-EAb" secondAttribute="bottom" id="wiJ-6V-uiY"/>
                 <constraint firstItem="h0F-r9-EAb" firstAttribute="leading" secondItem="Bqd-sF-NI8" secondAttribute="trailing" constant="3" id="zcj-29-Axc"/>
             </constraints>

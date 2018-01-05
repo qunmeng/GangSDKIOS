@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="gangCenterUserCollectionViewCell" id="gTV-IL-0wX" customClass="GangCenterUserCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="80" height="65"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="80" height="65"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O9Z-9C-Ghv">
+                        <rect key="frame" x="16" y="0.0" width="48" height="48"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="48" id="7Gb-tb-zag"/>
+                            <constraint firstAttribute="width" constant="48" id="Ra7-oI-Yhk"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hRJ-ug-tfv">
+                        <rect key="frame" x="0.0" y="53" width="80" height="12"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="O9Z-9C-Ghv" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="0N9-jv-TQZ"/>
+                <constraint firstAttribute="trailing" secondItem="hRJ-ug-tfv" secondAttribute="trailing" id="3ed-Pq-0pk"/>
+                <constraint firstItem="O9Z-9C-Ghv" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="T4o-XY-by9"/>
+                <constraint firstItem="hRJ-ug-tfv" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sOl-o4-cfW"/>
+                <constraint firstItem="hRJ-ug-tfv" firstAttribute="top" secondItem="O9Z-9C-Ghv" secondAttribute="bottom" constant="5" id="wmR-rb-JYK"/>
+                <constraint firstAttribute="bottom" secondItem="hRJ-ug-tfv" secondAttribute="bottom" id="z5I-4A-TJ6"/>
+            </constraints>
+            <connections>
+                <outlet property="iv_gameIcon" destination="O9Z-9C-Ghv" id="OQJ-CZ-vdV"/>
+                <outlet property="label_gameName" destination="hRJ-ug-tfv" id="Ejw-rb-F6j"/>
+            </connections>
+            <point key="canvasLocation" x="25" y="51.5"/>
+        </collectionViewCell>
+    </objects>
+</document>

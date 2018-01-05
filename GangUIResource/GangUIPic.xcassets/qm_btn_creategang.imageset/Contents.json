@@ -9,22 +9,8 @@
       "scale" : "2x"
     },
     {
-      "resizing" : {
-        "mode" : "9-part",
-        "center" : {
-          "mode" : "tile",
-          "width" : 1,
-          "height" : 1
-        },
-        "cap-insets" : {
-          "bottom" : 66,
-          "top" : 65,
-          "right" : 66,
-          "left" : 65
-        }
-      },
       "idiom" : "universal",
-      "filename" : "btn_creategang.png",
+      "filename" : "qm_btn_creategang@3x.png",
       "scale" : "3x"
     }
   ],

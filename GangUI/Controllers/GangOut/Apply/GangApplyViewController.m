@@ -71,7 +71,6 @@
     GangQueryListItemBean *infoData = dataArray[indexPath.row];
     cell.baseCellDelegate = self;
     [cell setTheObj:infoData];
-    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     return cell;
 }
 
@@ -121,7 +120,6 @@
         [self.tableView endUpdates];
     } fail:^(NSError * _Nullable error) {
         [[UIApplication sharedApplication].keyWindow removeLoading];
-        [[UIApplication sharedApplication].keyWindow toastTheMsg:@"取消申请失败"];
         if (error) {
             [[UIApplication sharedApplication].keyWindow toastTheMsg:error.domain];
         }
